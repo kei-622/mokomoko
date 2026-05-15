@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<meta name="theme-color" content="#020813">
-<title>もこもこ☆シューター - Glimmering Blue Edition</title>
+<meta name="theme-color" content="#0d0820">
+<title>もこもこ☆シューター - Colorful Glimmer Edition</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=M+PLUS+Rounded+1c:wght@500;700;900&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: #000000;
+    background: #050310;
     font-family: 'M PLUS Rounded 1c', -apple-system, "Hiragino Maru Gothic ProN", sans-serif;
     touch-action: none;
     overscroll-behavior: none;
@@ -34,9 +34,9 @@
     align-items: center;
     justify-content: center;
     background:
-      radial-gradient(circle at 20% 10%, rgba(0, 255, 255, 0.12), transparent 45%),
-      radial-gradient(circle at 80% 90%, rgba(30, 144, 255, 0.1), transparent 45%),
-      #000000;
+      radial-gradient(circle at 20% 10%, rgba(255,143,184,0.15), transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(135,206,235,0.12), transparent 40%),
+      #050310;
   }
 
   #gameContainer {
@@ -47,11 +47,11 @@
     max-height: 100vh;
     aspect-ratio: 9 / 16;
     background:
-      radial-gradient(ellipse at 50% 0%, #001f3f 0%, #001122 50%, #000000 100%);
+      radial-gradient(ellipse at 50% 0%, #3a2360 0%, #1a0e35 40%, #0d0820 100%);
     overflow: hidden;
     box-shadow:
-      0 0 80px rgba(0, 191, 255, 0.2),
-      inset 0 0 60px rgba(0, 255, 255, 0.03);
+      0 0 80px rgba(167, 139, 250, 0.25),
+      inset 0 0 60px rgba(255,143,184,0.05);
   }
 
   @media (min-aspect-ratio: 9/16) {
@@ -82,8 +82,8 @@
   }
 
   .hud-card {
-    background: rgba(0, 5, 15, 0.65);
-    border: 1.5px solid rgba(0, 255, 255, 0.15);
+    background: rgba(13,8,32,0.55);
+    border: 1.5px solid rgba(255,255,255,0.12);
     border-radius: 14px;
     padding: 7px 12px;
     backdrop-filter: blur(10px);
@@ -103,18 +103,17 @@
     letter-spacing: 1.5px;
     font-weight: 700;
     margin-bottom: 1px;
-    color: #87CEEB;
   }
 
   .value {
     font-size: 18px;
     font-weight: 900;
-    color: #00FFFF;
+    color: #FFE082;
     line-height: 1.1;
     font-variant-numeric: tabular-nums;
   }
 
-  .value.danger { color: #1E90FF; }
+  .value.danger { color: #FF8FB8; }
   .value.cool { color: #87CEEB; }
 
   .value.chain-active {
@@ -123,14 +122,14 @@
 
   @keyframes chainGlow {
     from {
-      color: #00FFFF;
+      color: #FFE082;
       transform: scale(1);
-      text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+      text-shadow: 0 0 8px rgba(255, 224, 130, 0.6);
     }
     to {
-      color: #ADD8E6;
+      color: #FF8FB8;
       transform: scale(1.18);
-      text-shadow: 0 0 18px rgba(0, 191, 255, 1), 0 0 28px rgba(0, 255, 255, 0.6);
+      text-shadow: 0 0 18px rgba(255, 143, 184, 1), 0 0 28px rgba(255, 224, 130, 0.6);
     }
   }
 
@@ -144,7 +143,7 @@
 
   .wave-bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, #00BFFF, #00FFFF);
+    background: linear-gradient(90deg, #FF8FB8, #B19CD9);
     transition: width 0.3s ease;
     border-radius: 2px;
   }
@@ -160,11 +159,11 @@
     font-family: 'DotGothic16', monospace;
     font-size: 32px;
     font-weight: 900;
-    color: #00FFFF;
+    color: #FFE082;
     text-shadow:
-      0 0 12px rgba(0,255,255,0.8),
-      2px 2px 0 #1E90FF,
-      4px 4px 0 #001122;
+      0 0 12px rgba(255,224,130,0.8),
+      2px 2px 0 #B19CD9,
+      4px 4px 0 #1a0e35;
     letter-spacing: 2px;
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s;
     opacity: 0;
@@ -184,7 +183,7 @@
     align-items: center;
     justify-content: center;
     background:
-      radial-gradient(ellipse at center, rgba(0, 15, 35, 0.94) 0%, rgba(0, 0, 0, 0.98) 70%);
+      radial-gradient(ellipse at center, rgba(45,27,78,0.92) 0%, rgba(13,8,32,0.97) 70%);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     z-index: 20;
@@ -202,13 +201,13 @@
     font-family: 'DotGothic16', 'M PLUS Rounded 1c', monospace;
     font-size: clamp(36px, 10vw, 56px);
     font-weight: 900;
-    background: linear-gradient(135deg, #00FFFF 0%, #00BFFF 50%, #1E90FF 100%);
+    background: linear-gradient(135deg, #FFE082 0%, #FF8FB8 50%, #87CEEB 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     line-height: 1.1;
     letter-spacing: 3px;
-    text-shadow: 0 0 30px rgba(0,255,255,0.3);
+    text-shadow: 0 0 30px rgba(255,143,184,0.4);
     animation: titleFloat 3s ease-in-out infinite;
     margin-bottom: 6px;
   }
@@ -224,11 +223,10 @@
     letter-spacing: 6px;
     margin-bottom: 36px;
     font-weight: 500;
-    color: #87CEEB;
   }
 
   .start-btn {
-    background: linear-gradient(135deg, #00BFFF 0%, #1E90FF 100%);
+    background: linear-gradient(135deg, #FF8FB8 0%, #B19CD9 100%);
     color: #fff;
     border: none;
     padding: 16px 44px;
@@ -239,15 +237,15 @@
     letter-spacing: 4px;
     cursor: pointer;
     box-shadow:
-      0 8px 28px rgba(0,191,255,0.4),
-      inset 0 1px 0 rgba(255,255,255,0.3);
+      0 8px 28px rgba(255,143,184,0.45),
+      inset 0 1px 0 rgba(255,255,255,0.4);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
     position: relative;
   }
 
   .start-btn:active {
     transform: scale(0.96);
-    box-shadow: 0 4px 16px rgba(0,191,255,0.35);
+    box-shadow: 0 4px 16px rgba(255,143,184,0.4);
   }
 
   .start-btn::before {
@@ -262,26 +260,25 @@
     opacity: 0.55;
     line-height: 1.9;
     max-width: 280px;
-    color: #ADD8E6;
   }
 
   .instructions strong {
-    color: #00FFFF;
+    color: #FFE082;
     font-weight: 700;
   }
 
   .game-over-title {
     font-family: 'DotGothic16', monospace;
     font-size: 40px;
-    color: #1E90FF;
+    color: #FF8FB8;
     margin-bottom: 8px;
     letter-spacing: 4px;
-    text-shadow: 0 0 20px rgba(30,144,255,0.6);
+    text-shadow: 0 0 20px rgba(255,143,184,0.6);
   }
 
   .game-over-title.win {
-    color: #00FFFF;
-    text-shadow: 0 0 20px rgba(0,255,255,0.6);
+    color: #FFE082;
+    text-shadow: 0 0 20px rgba(255,224,130,0.6);
   }
 
   .end-msg {
@@ -296,16 +293,15 @@
     opacity: 0.6;
     letter-spacing: 4px;
     margin-bottom: 4px;
-    color: #87CEEB;
   }
 
   .final-score {
     font-family: 'DotGothic16', monospace;
     font-size: 56px;
     font-weight: 900;
-    color: #00FFFF;
+    color: #FFE082;
     margin-bottom: 32px;
-    text-shadow: 0 4px 16px rgba(0,255,255,0.4);
+    text-shadow: 0 4px 16px rgba(255,224,130,0.4);
     font-variant-numeric: tabular-nums;
   }
 
@@ -325,11 +321,11 @@
     animation: bounce 1.5s ease-in-out infinite;
   }
 
-  .preview-monsters span:nth-child(1) { background: #00FFFF; animation-delay: 0s; }
-  .preview-monsters span:nth-child(2) { background: #ADD8E6; animation-delay: 0.1s; }
-  .preview-monsters span:nth-child(3) { background: #87CEEB; animation-delay: 0.2s; }
-  .preview-monsters span:nth-child(4) { background: #1E90FF; animation-delay: 0.3s; }
-  .preview-monsters span:nth-child(5) { background: #00BFFF; animation-delay: 0.4s; }
+  .preview-monsters span:nth-child(1) { background: #FF8FB8; animation-delay: 0s; }
+  .preview-monsters span:nth-child(2) { background: #87CEEB; animation-delay: 0.1s; }
+  .preview-monsters span:nth-child(3) { background: #FFE082; animation-delay: 0.2s; }
+  .preview-monsters span:nth-child(4) { background: #B19CD9; animation-delay: 0.3s; }
+  .preview-monsters span:nth-child(5) { background: #A8E6CF; animation-delay: 0.4s; }
 
   @keyframes bounce {
     0%, 100% { transform: translateY(0); }
@@ -365,7 +361,7 @@
       <span></span><span></span><span></span><span></span><span></span>
     </div>
     <div class="game-title">もこもこ<br>シューター</div>
-    <div class="subtitle">★ GLIMMERING BLUE ★</div>
+    <div class="subtitle">★ MOKOMOKO SHOOTER ★</div>
     <button class="start-btn" id="startBtn">スタート</button>
     <div class="instructions">
       指でなぞって <strong>ねらいを定め</strong><br>
@@ -380,7 +376,7 @@
     <div class="final-score-label">YOUR SCORE</div>
     <div class="final-score" id="finalScore">0</div>
     <div class="final-score-label" id="waveSurvivedLine" style="margin-top:-22px;margin-bottom:24px;">
-      WAVE <span id="finalWave" style="color:#00FFFF;font-weight:900;">0</span> 到達
+      WAVE <span id="finalWave" style="color:#FF8FB8;font-weight:900;">0</span> 到達
     </div>
     <button class="start-btn" id="retryBtn">もう一度</button>
   </div>
@@ -405,13 +401,12 @@ const DEAD_LINE_Y = SHOOTER_Y - BUBBLE_R - 28;
 const PROJ_SPEED = 10;
 const SHOTS_PER_WAVE_INITIAL = 5;
 
-// すべて指定の「BlueColors」を基調としたカラーパレットに変更
 const COLORS = [
-  { fill:'#00FFFF', dark:'#00A3A3', light:'#E0FFFF', glow:'rgba(0,255,255,0.6)' },
-  { fill:'#ADD8E6', dark:'#7AABBC', light:'#F0F8FF', glow:'rgba(173,216,230,0.6)' },
-  { fill:'#87CEEB', dark:'#4A99B8', light:'#E6F2FF', glow:'rgba(135,206,235,0.6)' },
-  { fill:'#1E90FF', dark:'#005FC7', light:'#CCE6FF', glow:'rgba(30,144,255,0.6)' },
-  { fill:'#00BFFF', dark:'#0084B3', light:'#D5F3FF', glow:'rgba(0,191,255,0.6)' },
+  { fill:'#FF8FB8', dark:'#B84A77', light:'#FFCDDD', glow:'rgba(255,143,184,0.6)' },
+  { fill:'#87CEEB', dark:'#3D7DA5', light:'#C8E8F5', glow:'rgba(135,206,235,0.6)' },
+  { fill:'#FFE082', dark:'#B89640', light:'#FFF1B8', glow:'rgba(255,224,130,0.6)' },
+  { fill:'#B19CD9', dark:'#6B5499', light:'#D5C7EA', glow:'rgba(177,156,217,0.6)' },
+  { fill:'#A8E6CF', dark:'#5BAB85', light:'#D0F0DF', glow:'rgba(168,230,207,0.6)' },
 ];
 
 // ============================================================
@@ -577,7 +572,7 @@ function initGame() {
       bubbles.push({
         col, row,
         x: pos.x, y: pos.y,
-        color: Math.floor(Math.random() * 5),
+        color: Math.floor(Math.random() * COLORS.length),
         wobble: Math.random() * Math.PI * 2,
         scale: 1,
         spawnAge: 0,
@@ -654,10 +649,9 @@ function handleEnd(e) {
   projectile.flying = true;
   shooterRecoil = 1;
 
-  // マズルエフェクトも青の煌めき仕様に
-  const c = COLORS[projectile.color];
-  for (let i = 0; i < 8; i++) {
-    particles.push(createBlueGlimmerParticle(projectile.x, projectile.y, nx * 2, ny * 2));
+  // 発射時のマズルエフェクトを新しいキラキラ演出に
+  for (let i = 0; i < 5; i++) {
+    particles.push(new TargetParticle(projectile.x, projectile.y));
   }
 }
 
@@ -673,23 +667,36 @@ canvas.addEventListener('mouseleave', () => { isAiming = false; });
 document.addEventListener('gesturestart', (e) => e.preventDefault());
 
 // ============================================================
-// NEW PARTICLE GENERATOR (2つ目のコードのロジックを統合)
+// NEW PARTICLE CLASS (指定されたキラキラエフェクトの完全移植)
 // ============================================================
-function createBlueGlimmerParticle(x, y, baseVx = 0, baseVy = 0) {
-  const blueColors = ['#00FFFF', '#ADD8E6', '#87CEEB', '#1E90FF', '#00BFFF'];
-  return {
-    type: 'glimmer',
-    x: x,
-    y: y,
-    size: Math.random() * 6 + 2, // 少し大きめ
-    vx: (Math.random() * 4 - 2) + baseVx, // 少し速め
-    vy: (Math.random() * 4 - 2) + baseVy,
-    color: blueColors[Math.floor(Math.random() * blueColors.length)],
-    opacity: 1,
-    twinkleSpeed: Math.random() * 0.05 + 0.02, // 瞬きの速さ
-    isTwinkling: false,
-    life: 100 // 最大生存フレーム
-  };
+class TargetParticle {
+  constructor(x, y) {
+    const glimColors = ['#FFD700', '#FFF', '#00FFFF', '#FF69B4', '#ADFF2F']; // キラキラの色
+    this.x = x;
+    this.y = y;
+    this.size = Math.random() * 5 + 1; // 大きさ
+    this.speedX = Math.random() * 3 - 1.5; // X方向の速度
+    this.speedY = Math.random() * 3 - 1.5; // Y方向の速度
+    this.color = glimColors[Math.floor(Math.random() * glimColors.length)];
+    this.opacity = 1; // 透明度
+  }
+
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    if (this.size > 0.1) this.size -= 0.05; // 徐々に小さく
+    this.opacity -= 0.01; // 徐々に消える
+  }
+
+  draw(renderCtx) {
+    renderCtx.save();
+    renderCtx.fillStyle = this.color;
+    renderCtx.globalAlpha = this.opacity;
+    renderCtx.beginPath();
+    renderCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    renderCtx.fill();
+    renderCtx.restore();
+  }
 }
 
 // ============================================================
@@ -757,7 +764,7 @@ function attachProjectile() {
 
     const popPoints = matches.length * 10 * Math.max(1, chain);
     score += popPoints;
-    addScorePopup(newBubble.x, newBubble.y - 10, '+' + popPoints, '#00FFFF');
+    addScorePopup(newBubble.x, newBubble.y - 10, '+' + popPoints, '#FFE082');
     showCombo(matches.length, chain);
 
     const floaters = findFloaters();
@@ -777,7 +784,7 @@ function attachProjectile() {
       const floatPts = floaters.length * 25 * Math.max(1, chain);
       score += floatPts;
       setTimeout(() => {
-        addScorePopup(GAME_W/2, GAME_H/2 - 40, '+' + floatPts + ' ドロップ!', '#ADD8E6');
+        addScorePopup(GAME_W/2, GAME_H/2 - 40, '+' + floatPts + ' ドロップ!', '#A8E6CF');
       }, 200);
       screenShake = Math.max(screenShake, 10);
       screenFlash = Math.max(screenFlash, 0.35);
@@ -849,7 +856,7 @@ function findFloaters() {
   return bubbles.filter((b) => !anchored.has(b.col + ',' + b.row));
 }
 
-// 消滅時のエフェクトを完全書き換え（2つ目のコードの煌めくパーティクルを大量生成）
+// 消滅時エフェクトの書き換え（1つのもこもこ消滅につき、一度に25粒生成して弾けさせる）
 function explodeBubble(b) {
   popGhosts.push({
     x: b.x, y: b.y,
@@ -857,9 +864,8 @@ function explodeBubble(b) {
     age: 0, maxAge: 12,
   });
 
-  // 1箇所につき多めの20個の「煌めく青パーティクル」を四方に放出
-  for (let i = 0; i < 20; i++) {
-    particles.push(createBlueGlimmerParticle(b.x, b.y));
+  for (let i = 0; i < 25; i++) {
+    particles.push(new TargetParticle(b.x, b.y));
   }
 }
 
@@ -933,31 +939,11 @@ function update() {
   if (screenFlash > 0) screenFlash *= 0.82;
   if (shooterRecoil > 0) shooterRecoil *= 0.80;
 
-  // パーティクルの更新処理（瞬き・サイズ減少・寿命判定の統合）
+  // パーティクルのライフサイクル管理と更新処理
   for (let i = particles.length - 1; i >= 0; i--) {
-    const p = particles[i];
-    if (p.type === 'glimmer') {
-      p.x += p.vx;
-      p.y += p.vy;
-      if (p.size > 0.2) p.size -= 0.08;
-
-      // 輝くような瞬き効果ロジック
-      if (p.opacity < 1 && p.isTwinkling) {
-        p.opacity += p.twinkleSpeed;
-        if (p.opacity >= 1) p.isTwinkling = false;
-      } else if (!p.isTwinkling) {
-        p.opacity -= 0.02; // 通常は徐々に消える
-        if (Math.random() < 0.05) p.isTwinkling = true; // たまに瞬く
-      }
-      p.life--;
-      if (p.opacity <= 0 || p.life <= 0) {
-        particles.splice(i, 1);
-      }
-    } else {
-      // 予備の古いパーティクル用処理
-      p.x += p.vx; p.y += p.vy;
-      p.life--;
-      if (p.life <= 0) particles.splice(i, 1);
+    particles[i].update();
+    if (particles[i].opacity <= 0 || particles[i].size <= 0.1) {
+      particles.splice(i, 1);
     }
   }
 
@@ -973,12 +959,12 @@ function update() {
     if (s.age >= s.maxAge) shockwaves.splice(i, 1);
   }
 
-  // 落下バブルの軌跡エフェクトも青の煌めきに変更
+  // 落下もこもこの軌跡エフェクトも新しいキラキラに変更
   for (let i = fallingBubbles.length - 1; i >= 0; i--) {
     const b = fallingBubbles[i];
     b.vy += 0.45; b.y += b.vy; b.x += b.vx;
-    if (Math.random() < 0.25) {
-      particles.push(createBlueGlimmerParticle(b.x, b.y));
+    if (Math.random() < 0.2) {
+      particles.push(new TargetParticle(b.x, b.y));
     }
     if (b.y > GAME_H + 50) fallingBubbles.splice(i, 1);
   }
@@ -1015,10 +1001,8 @@ function update() {
   if (state !== 'playing') return;
 
   if (projectile && projectile.flying) {
-    // 飛行中の軌跡エフェクトも青の煌めきへ
-    if (frame % 2 === 0) {
-      particles.push(createBlueGlimmerParticle(projectile.x, projectile.y));
-    }
+    // 飛行中の軌跡をキラキラエフェクトに変更
+    particles.push(new TargetParticle(projectile.x, projectile.y));
 
     const steps = 3;
     const dx = projectile.vx / steps;
@@ -1029,10 +1013,10 @@ function update() {
 
       if (projectile.x < BUBBLE_R) {
         projectile.x = BUBBLE_R; projectile.vx = -projectile.vx;
-        for(let i=0; i<3; i++) particles.push(createBlueGlimmerParticle(projectile.x, projectile.y));
+        particles.push(new TargetParticle(projectile.x, projectile.y));
       } else if (projectile.x > GAME_W - BUBBLE_R) {
         projectile.x = GAME_W - BUBBLE_R; projectile.vx = -projectile.vx;
-        for(let i=0; i<3; i++) particles.push(createBlueGlimmerParticle(projectile.x, projectile.y));
+        particles.push(new TargetParticle(projectile.x, projectile.y));
       }
 
       if (projectile.y < TOP_OFFSET + BUBBLE_R + globalDescentOffset) {
@@ -1077,8 +1061,8 @@ function render() {
 
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   
-  // 2つ目のコードの「rgba(0,0,0,0.08)」のトレイル効果（残像演出）をゲームキャンバスに適用
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.12)';
+  // 指定された仕様の「rgba(0, 0, 0, 0.1)」による残像画面クリアを適用
+  ctx.fillStyle = 'rgba(5, 3, 16, 0.1)';
   ctx.fillRect(0, 0, w, h);
 
   ctx.save();
@@ -1159,17 +1143,9 @@ function render() {
     drawNextPreview();
   }
 
-  // 煌めくパーティクル（Glimmering Blue）の描画ロジック
-  for (const p of particles) {
-    if (p.type === 'glimmer') {
-      ctx.save();
-      ctx.fillStyle = p.color;
-      ctx.globalAlpha = p.opacity;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-    }
+  // キラキラパーティクル配列の描画処理を回す
+  for (let i = 0; i < particles.length; i++) {
+    particles[i].draw(ctx);
   }
 
   for (const p of scorePopups) {
@@ -1202,31 +1178,31 @@ function render() {
   ctx.restore();
 }
 
-// === Background 星空 ===
+// === Background ===
 function drawStars() {
   for (const s of stars) {
-    const a = 0.2 + 0.6 * Math.abs(Math.sin(frame * s.twSpeed + s.twinkle));
-    ctx.fillStyle = 'rgba(0, 255, 255, ' + a * 0.6 + ')'; // 星々もシアン寄りの煌めきに
+    const a = 0.3 + 0.5 * Math.abs(Math.sin(frame * s.twSpeed + s.twinkle));
+    ctx.fillStyle = 'rgba(255,255,255,' + a + ')';
     ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2); ctx.fill();
   }
-  const grad = ctx.createRadialGradient(GAME_W * 0.5, 0, 0, GAME_W * 0.5, 0, 150);
-  grad.addColorStop(0, 'rgba(0, 191, 255, 0.15)');
-  grad.addColorStop(1, 'rgba(0,0,0,0)');
+  const grad = ctx.createRadialGradient(GAME_W * 0.7, 30, 0, GAME_W * 0.7, 30, 80);
+  grad.addColorStop(0, 'rgba(255, 224, 130, 0.15)');
+  grad.addColorStop(1, 'rgba(255, 224, 130, 0)');
   ctx.fillStyle = grad;
-  ctx.fillRect(0, 0, GAME_W, 150);
+  ctx.fillRect(0, 0, GAME_W, 120);
 }
 
 function drawTopWarning() {
   if (dangerLevel < 0.3) return;
-  const a = (dangerLevel - 0.3) * 0.4;
-  ctx.fillStyle = 'rgba(30, 144, 255, ' + (a * (0.5 + 0.5 * Math.sin(frame * 0.2))) + ')'; // 危険演出も青系統のフラッシュに変更
+  const a = (dangerLevel - 0.3) * 0.5;
+  ctx.fillStyle = 'rgba(255, 100, 100, ' + (a * (0.5 + 0.5 * Math.sin(frame * 0.2))) + ')';
   ctx.fillRect(0, 0, GAME_W, GAME_H);
 }
 
 function drawDeadLine() {
   ctx.save();
   const pulse = 0.4 + 0.3 * Math.sin(frame * 0.08);
-  ctx.strokeStyle = 'rgba(0, 191, 255, ' + pulse + ')';
+  ctx.strokeStyle = 'rgba(255, 100, 130, ' + pulse + ')';
   ctx.lineWidth = 1.5;
   ctx.setLineDash([6, 6]);
   ctx.lineDashOffset = -frame * 0.5;
@@ -1234,7 +1210,7 @@ function drawDeadLine() {
   ctx.restore();
 }
 
-// === Cute Blue Monster ===
+// === Cute Monster ===
 function drawMonster(x, y, colorIdx, wobble, scale = 1, rotation = 0) {
   const c = COLORS[colorIdx];
   const r = BUBBLE_R * scale;
@@ -1259,38 +1235,32 @@ function drawMonster(x, y, colorIdx, wobble, scale = 1, rotation = 0) {
   ctx.fill();
   ctx.shadowBlur = 0;
 
-  // ハイライト
-  ctx.fillStyle = 'rgba(255,255,255,0.6)';
+  ctx.fillStyle = 'rgba(255,255,255,0.55)';
   ctx.beginPath(); ctx.ellipse(-r * 0.35, -r * 0.45, r * 0.3, r * 0.18, -0.5, 0, Math.PI * 2); ctx.fill();
 
-  // 目
   const eyeR = r * 0.16;
   const eyeOffX = r * 0.32;
   const eyeOffY = -r * 0.02;
 
   ctx.fillStyle = '#fff';
   ctx.beginPath();
-  ctx.arc(-eyeOffX, eyeOffY, eyeR + 1.2, 0, Math.PI * 2);
-  ctx.arc(eyeOffX,  eyeOffY, eyeR + 1.2, 0, Math.PI * 2);
+  ctx.arc(-eyeOffX, eyeOffY, eyeR + 1.5, 0, Math.PI * 2);
+  ctx.arc(eyeOffX,  eyeOffY, eyeR + 1.5, 0, Math.PI * 2);
   ctx.fill();
 
-  ctx.fillStyle = '#001122';
+  ctx.fillStyle = '#1a0e35';
   ctx.beginPath();
-  ctx.arc(-eyeOffX, eyeOffY + 0.5, eyeR * 0.65, 0, Math.PI * 2);
-  ctx.arc(eyeOffX,  eyeOffY + 0.5, eyeR * 0.65, 0, Math.PI * 2);
+  ctx.arc(-eyeOffX, eyeOffY + 1, eyeR * 0.65, 0, Math.PI * 2);
+  ctx.arc(eyeOffX,  eyeOffY + 1, eyeR * 0.65, 0, Math.PI * 2);
   ctx.fill();
 
-  // 口
-  ctx.strokeStyle = c.dark;
-  ctx.lineWidth = Math.max(1.2, r * 0.09);
-  ctx.lineCap = 'round';
-  ctx.beginPath(); ctx.arc(0, r * 0.25, r * 0.18, 0.2, Math.PI - 0.2); ctx.stroke();
+  ctx.strokeStyle = c.dark; ctx.lineWidth = Math.max(1.2, r * 0.09); ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.arc(0, r * 0.28, r * 0.18, 0.2, Math.PI - 0.2); ctx.stroke();
 
-  // ほっぺ
-  ctx.fillStyle = 'rgba(0, 255, 255, 0.3)';
+  ctx.fillStyle = 'rgba(255, 110, 140, 0.45)';
   ctx.beginPath();
-  ctx.arc(-r * 0.5, r * 0.2, r * 0.12, 0, Math.PI * 2);
-  ctx.arc(r * 0.5,  r * 0.2, r * 0.12, 0, Math.PI * 2);
+  ctx.arc(-r * 0.5, r * 0.22, r * 0.12, 0, Math.PI * 2);
+  ctx.arc(r * 0.5,  r * 0.22, r * 0.12, 0, Math.PI * 2);
   ctx.fill();
 
   ctx.restore();
@@ -1330,7 +1300,7 @@ function drawAimLine() {
   ctx.save();
   ctx.lineWidth = 2;
   ctx.setLineDash([4, 6]);
-  ctx.strokeStyle = 'rgba(0, 255, 255, 0.5)';
+  ctx.strokeStyle = 'rgba(255,255,255,0.4)';
   ctx.beginPath();
   for (let i = 0; i < points.length; i++) {
     if (i === 0) ctx.moveTo(points[i].x, points[i].y);
@@ -1340,13 +1310,13 @@ function drawAimLine() {
   ctx.restore();
 }
 
-// === Shooter Mochi Cat (Blue Style) ===
+// === Shooter Mochi Cat ===
 function drawShooter() {
   ctx.save();
   ctx.translate(GAME_W / 2, SHOOTER_Y + 14);
   const breath = 1 + Math.sin(frame * 0.08) * 0.02;
 
-  ctx.fillStyle = 'rgba(0,0,0,0.5)';
+  ctx.fillStyle = 'rgba(0,0,0,0.4)';
   ctx.beginPath(); ctx.ellipse(0, 28, 26, 5, 0, 0, Math.PI * 2); ctx.fill();
 
   const recoilScale = 1 - shooterRecoil * 0.18;
@@ -1361,33 +1331,27 @@ function drawShooter() {
     if (d > 1) { lookX = (dx / d) * 2.5; lookY = (dy / d) * 2; }
   }
 
-  // シューターの体もホワイトからクリアブルーのグラデーションに変更
-  ctx.shadowColor = 'rgba(0, 255, 255, 0.3)';
+  ctx.shadowColor = 'rgba(255,143,184,0.4)';
   ctx.shadowBlur = 10;
   const grad = ctx.createRadialGradient(-6, -8, 0, 0, 0, bodyR);
-  grad.addColorStop(0, '#ffffff');
-  grad.addColorStop(0.6, '#E0F7FA');
-  grad.addColorStop(1, '#80DEEA');
+  grad.addColorStop(0, '#ffffff'); grad.addColorStop(0.7, '#FFE4EC'); grad.addColorStop(1, '#FFB8D0');
   ctx.fillStyle = grad;
   ctx.beginPath(); ctx.ellipse(0, 0, bodyR, bodyR * 0.9, 0, 0, Math.PI * 2); ctx.fill();
   ctx.shadowBlur = 0;
 
-  // 耳
-  ctx.fillStyle = '#80DEEA';
+  ctx.fillStyle = '#FFB8D0';
   ctx.beginPath();
   ctx.moveTo(-bodyR*0.7, -bodyR*0.55); ctx.lineTo(-bodyR*0.4, -bodyR*1.15); ctx.lineTo(-bodyR*0.2, -bodyR*0.75);
   ctx.moveTo(bodyR*0.7, -bodyR*0.55); ctx.lineTo(bodyR*0.4, -bodyR*1.15); ctx.lineTo(bodyR*0.2, -bodyR*0.75);
   ctx.fill();
 
-  // 目
-  ctx.fillStyle = '#001122';
+  ctx.fillStyle = '#1a0e35';
   ctx.beginPath();
   ctx.arc(-bodyR * 0.32 + lookX, -bodyR * 0.05 + lookY, 3.5, 0, Math.PI * 2);
   ctx.arc(bodyR * 0.32 + lookX,  -bodyR * 0.05 + lookY, 3.5, 0, Math.PI * 2);
   ctx.fill();
 
-  // 口
-  ctx.strokeStyle = '#001122'; ctx.lineWidth = 1.6; ctx.lineCap = 'round';
+  ctx.strokeStyle = '#1a0e35'; ctx.lineWidth = 1.6; ctx.lineCap = 'round';
   ctx.beginPath(); ctx.moveTo(-3.5, bodyR * 0.22); ctx.lineTo(0, bodyR * 0.32); ctx.lineTo(3.5, bodyR * 0.22); ctx.stroke();
 
   ctx.restore();
@@ -1396,13 +1360,13 @@ function drawShooter() {
 function drawNextPreview() {
   ctx.save();
   ctx.translate(GAME_W - 30, SHOOTER_Y - 8);
-  ctx.fillStyle = 'rgba(0, 10, 25, 0.7)';
-  ctx.strokeStyle = 'rgba(0, 255, 255, 0.2)';
+  ctx.fillStyle = 'rgba(13,8,32,0.6)';
+  ctx.strokeStyle = 'rgba(255,255,255,0.2)';
   ctx.lineWidth = 1.5;
   ctx.beginPath(); ctx.roundRect(-22, -16, 44, 32, 12); ctx.fill(); ctx.stroke();
 
   ctx.font = '700 7px sans-serif';
-  ctx.fillStyle = 'rgba(0, 255, 255, 0.7)';
+  ctx.fillStyle = 'rgba(255,255,255,0.6)';
   ctx.textAlign = 'center';
   ctx.fillText('NEXT', 0, -8);
 
@@ -1456,8 +1420,7 @@ function updateHUD() {
   const shotPct = shotsUntilNewRow / Math.max(1, Math.ceil(shotsPerWave));
   const timePct = 1 - (globalDescentOffset / ROW_H);
   const fillPct = Math.max(0, Math.min(shotPct, timePct)) * 100;
-  const fill = document.getElementById('waveFill');
-  fill.style.width = fillPct + '%';
+  document.getElementById('waveFill').style.width = fillPct + '%';
 }
 
 function startGame() {
