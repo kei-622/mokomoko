@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<meta name="theme-color" content="#0d0820">
-<title>もこもこ☆シューター</title>
+<meta name="theme-color" content="#020813">
+<title>もこもこ☆シューター - Glimmering Blue Edition</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=M+PLUS+Rounded+1c:wght@500;700;900&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: #050310;
+    background: #000000;
     font-family: 'M PLUS Rounded 1c', -apple-system, "Hiragino Maru Gothic ProN", sans-serif;
     touch-action: none;
     overscroll-behavior: none;
@@ -34,9 +34,9 @@
     align-items: center;
     justify-content: center;
     background:
-      radial-gradient(circle at 20% 10%, rgba(255,143,184,0.15), transparent 40%),
-      radial-gradient(circle at 80% 90%, rgba(135,206,235,0.12), transparent 40%),
-      #050310;
+      radial-gradient(circle at 20% 10%, rgba(0, 255, 255, 0.12), transparent 45%),
+      radial-gradient(circle at 80% 90%, rgba(30, 144, 255, 0.1), transparent 45%),
+      #000000;
   }
 
   #gameContainer {
@@ -47,11 +47,11 @@
     max-height: 100vh;
     aspect-ratio: 9 / 16;
     background:
-      radial-gradient(ellipse at 50% 0%, #3a2360 0%, #1a0e35 40%, #0d0820 100%);
+      radial-gradient(ellipse at 50% 0%, #001f3f 0%, #001122 50%, #000000 100%);
     overflow: hidden;
     box-shadow:
-      0 0 80px rgba(167, 139, 250, 0.25),
-      inset 0 0 60px rgba(255,143,184,0.05);
+      0 0 80px rgba(0, 191, 255, 0.2),
+      inset 0 0 60px rgba(0, 255, 255, 0.03);
   }
 
   @media (min-aspect-ratio: 9/16) {
@@ -82,8 +82,8 @@
   }
 
   .hud-card {
-    background: rgba(13,8,32,0.55);
-    border: 1.5px solid rgba(255,255,255,0.12);
+    background: rgba(0, 5, 15, 0.65);
+    border: 1.5px solid rgba(0, 255, 255, 0.15);
     border-radius: 14px;
     padding: 7px 12px;
     backdrop-filter: blur(10px);
@@ -103,17 +103,18 @@
     letter-spacing: 1.5px;
     font-weight: 700;
     margin-bottom: 1px;
+    color: #87CEEB;
   }
 
   .value {
     font-size: 18px;
     font-weight: 900;
-    color: #FFE082;
+    color: #00FFFF;
     line-height: 1.1;
     font-variant-numeric: tabular-nums;
   }
 
-  .value.danger { color: #FF8FB8; }
+  .value.danger { color: #1E90FF; }
   .value.cool { color: #87CEEB; }
 
   .value.chain-active {
@@ -122,14 +123,14 @@
 
   @keyframes chainGlow {
     from {
-      color: #FFE082;
+      color: #00FFFF;
       transform: scale(1);
-      text-shadow: 0 0 8px rgba(255, 224, 130, 0.6);
+      text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
     }
     to {
-      color: #FF8FB8;
+      color: #ADD8E6;
       transform: scale(1.18);
-      text-shadow: 0 0 18px rgba(255, 143, 184, 1), 0 0 28px rgba(255, 224, 130, 0.6);
+      text-shadow: 0 0 18px rgba(0, 191, 255, 1), 0 0 28px rgba(0, 255, 255, 0.6);
     }
   }
 
@@ -143,7 +144,7 @@
 
   .wave-bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, #FF8FB8, #B19CD9);
+    background: linear-gradient(90deg, #00BFFF, #00FFFF);
     transition: width 0.3s ease;
     border-radius: 2px;
   }
@@ -159,11 +160,11 @@
     font-family: 'DotGothic16', monospace;
     font-size: 32px;
     font-weight: 900;
-    color: #FFE082;
+    color: #00FFFF;
     text-shadow:
-      0 0 12px rgba(255,224,130,0.8),
-      2px 2px 0 #B19CD9,
-      4px 4px 0 #1a0e35;
+      0 0 12px rgba(0,255,255,0.8),
+      2px 2px 0 #1E90FF,
+      4px 4px 0 #001122;
     letter-spacing: 2px;
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s;
     opacity: 0;
@@ -183,7 +184,7 @@
     align-items: center;
     justify-content: center;
     background:
-      radial-gradient(ellipse at center, rgba(45,27,78,0.92) 0%, rgba(13,8,32,0.97) 70%);
+      radial-gradient(ellipse at center, rgba(0, 15, 35, 0.94) 0%, rgba(0, 0, 0, 0.98) 70%);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     z-index: 20;
@@ -197,23 +198,17 @@
     display: none;
   }
 
-  .title-decor {
-    position: absolute;
-    pointer-events: none;
-    opacity: 0.5;
-  }
-
   .game-title {
     font-family: 'DotGothic16', 'M PLUS Rounded 1c', monospace;
     font-size: clamp(36px, 10vw, 56px);
     font-weight: 900;
-    background: linear-gradient(135deg, #FFE082 0%, #FF8FB8 50%, #87CEEB 100%);
+    background: linear-gradient(135deg, #00FFFF 0%, #00BFFF 50%, #1E90FF 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     line-height: 1.1;
     letter-spacing: 3px;
-    text-shadow: 0 0 30px rgba(255,143,184,0.4);
+    text-shadow: 0 0 30px rgba(0,255,255,0.3);
     animation: titleFloat 3s ease-in-out infinite;
     margin-bottom: 6px;
   }
@@ -229,10 +224,11 @@
     letter-spacing: 6px;
     margin-bottom: 36px;
     font-weight: 500;
+    color: #87CEEB;
   }
 
   .start-btn {
-    background: linear-gradient(135deg, #FF8FB8 0%, #B19CD9 100%);
+    background: linear-gradient(135deg, #00BFFF 0%, #1E90FF 100%);
     color: #fff;
     border: none;
     padding: 16px 44px;
@@ -243,15 +239,15 @@
     letter-spacing: 4px;
     cursor: pointer;
     box-shadow:
-      0 8px 28px rgba(255,143,184,0.45),
-      inset 0 1px 0 rgba(255,255,255,0.4);
+      0 8px 28px rgba(0,191,255,0.4),
+      inset 0 1px 0 rgba(255,255,255,0.3);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
     position: relative;
   }
 
   .start-btn:active {
     transform: scale(0.96);
-    box-shadow: 0 4px 16px rgba(255,143,184,0.4);
+    box-shadow: 0 4px 16px rgba(0,191,255,0.35);
   }
 
   .start-btn::before {
@@ -266,25 +262,26 @@
     opacity: 0.55;
     line-height: 1.9;
     max-width: 280px;
+    color: #ADD8E6;
   }
 
   .instructions strong {
-    color: #FFE082;
+    color: #00FFFF;
     font-weight: 700;
   }
 
   .game-over-title {
     font-family: 'DotGothic16', monospace;
     font-size: 40px;
-    color: #FF8FB8;
+    color: #1E90FF;
     margin-bottom: 8px;
     letter-spacing: 4px;
-    text-shadow: 0 0 20px rgba(255,143,184,0.6);
+    text-shadow: 0 0 20px rgba(30,144,255,0.6);
   }
 
   .game-over-title.win {
-    color: #FFE082;
-    text-shadow: 0 0 20px rgba(255,224,130,0.6);
+    color: #00FFFF;
+    text-shadow: 0 0 20px rgba(0,255,255,0.6);
   }
 
   .end-msg {
@@ -299,15 +296,16 @@
     opacity: 0.6;
     letter-spacing: 4px;
     margin-bottom: 4px;
+    color: #87CEEB;
   }
 
   .final-score {
     font-family: 'DotGothic16', monospace;
     font-size: 56px;
     font-weight: 900;
-    color: #FFE082;
+    color: #00FFFF;
     margin-bottom: 32px;
-    text-shadow: 0 4px 16px rgba(255,224,130,0.4);
+    text-shadow: 0 4px 16px rgba(0,255,255,0.4);
     font-variant-numeric: tabular-nums;
   }
 
@@ -327,17 +325,16 @@
     animation: bounce 1.5s ease-in-out infinite;
   }
 
-  .preview-monsters span:nth-child(1) { background: #FF8FB8; animation-delay: 0s; }
-  .preview-monsters span:nth-child(2) { background: #87CEEB; animation-delay: 0.1s; }
-  .preview-monsters span:nth-child(3) { background: #FFE082; animation-delay: 0.2s; }
-  .preview-monsters span:nth-child(4) { background: #B19CD9; animation-delay: 0.3s; }
-  .preview-monsters span:nth-child(5) { background: #A8E6CF; animation-delay: 0.4s; }
+  .preview-monsters span:nth-child(1) { background: #00FFFF; animation-delay: 0s; }
+  .preview-monsters span:nth-child(2) { background: #ADD8E6; animation-delay: 0.1s; }
+  .preview-monsters span:nth-child(3) { background: #87CEEB; animation-delay: 0.2s; }
+  .preview-monsters span:nth-child(4) { background: #1E90FF; animation-delay: 0.3s; }
+  .preview-monsters span:nth-child(5) { background: #00BFFF; animation-delay: 0.4s; }
 
   @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
   }
-
 </style>
 </head>
 <body>
@@ -368,7 +365,7 @@
       <span></span><span></span><span></span><span></span><span></span>
     </div>
     <div class="game-title">もこもこ<br>シューター</div>
-    <div class="subtitle">★ MOKOMOKO SHOOTER ★</div>
+    <div class="subtitle">★ GLIMMERING BLUE ★</div>
     <button class="start-btn" id="startBtn">スタート</button>
     <div class="instructions">
       指でなぞって <strong>ねらいを定め</strong><br>
@@ -383,7 +380,7 @@
     <div class="final-score-label">YOUR SCORE</div>
     <div class="final-score" id="finalScore">0</div>
     <div class="final-score-label" id="waveSurvivedLine" style="margin-top:-22px;margin-bottom:24px;">
-      WAVE <span id="finalWave" style="color:#FF8FB8;font-weight:900;">0</span> 到達
+      WAVE <span id="finalWave" style="color:#00FFFF;font-weight:900;">0</span> 到達
     </div>
     <button class="start-btn" id="retryBtn">もう一度</button>
   </div>
@@ -400,7 +397,7 @@ const GAME_H = 640;
 
 const BUBBLE_R = 20;
 const COLS = 8;
-const ROW_H = BUBBLE_R * Math.sqrt(3); // ≒ 34.64
+const ROW_H = BUBBLE_R * Math.sqrt(3);
 const TOP_OFFSET = 64;
 const SHOOTER_Y = GAME_H - 56;
 const DEAD_LINE_Y = SHOOTER_Y - BUBBLE_R - 28;
@@ -408,12 +405,13 @@ const DEAD_LINE_Y = SHOOTER_Y - BUBBLE_R - 28;
 const PROJ_SPEED = 10;
 const SHOTS_PER_WAVE_INITIAL = 5;
 
+// すべて指定の「BlueColors」を基調としたカラーパレットに変更
 const COLORS = [
-  { fill:'#FF8FB8', dark:'#B84A77', light:'#FFCDDD', glow:'rgba(255,143,184,0.6)' },
-  { fill:'#87CEEB', dark:'#3D7DA5', light:'#C8E8F5', glow:'rgba(135,206,235,0.6)' },
-  { fill:'#FFE082', dark:'#B89640', light:'#FFF1B8', glow:'rgba(255,224,130,0.6)' },
-  { fill:'#B19CD9', dark:'#6B5499', light:'#D5C7EA', glow:'rgba(177,156,217,0.6)' },
-  { fill:'#A8E6CF', dark:'#5BAB85', light:'#D0F0DF', glow:'rgba(168,230,207,0.6)' },
+  { fill:'#00FFFF', dark:'#00A3A3', light:'#E0FFFF', glow:'rgba(0,255,255,0.6)' },
+  { fill:'#ADD8E6', dark:'#7AABBC', light:'#F0F8FF', glow:'rgba(173,216,230,0.6)' },
+  { fill:'#87CEEB', dark:'#4A99B8', light:'#E6F2FF', glow:'rgba(135,206,235,0.6)' },
+  { fill:'#1E90FF', dark:'#005FC7', light:'#CCE6FF', glow:'rgba(30,144,255,0.6)' },
+  { fill:'#00BFFF', dark:'#0084B3', light:'#D5F3FF', glow:'rgba(0,191,255,0.6)' },
 ];
 
 // ============================================================
@@ -451,19 +449,18 @@ let shotsPerWave = SHOTS_PER_WAVE_INITIAL;
 let score = 0;
 let chain = 0;
 let chainTimer = 0;
-let state = 'title'; // 'title' | 'playing' | 'gameover' | 'win'
+let state = 'title';
 let frame = 0;
 let dangerLevel = 0;
 let screenShake = 0;
-let screenFlash = 0;            // global white-flash overlay (0..1)
-let popGhosts = [];              // expanding fading bubble corpses
-let shockwaves = [];             // big ring bursts on heavy matches
-let shooterRecoil = 0;           // visual recoil after firing
+let screenFlash = 0;
+let popGhosts = [];
+let shockwaves = [];
+let shooterRecoil = 0;
 let globalDescentOffset = 0;
 let descentRate = 0;
 let waves = 0;
 
-// Pre-generated stars for the background
 const stars = Array.from({ length: 60 }, () => ({
   x: Math.random() * GAME_W,
   y: Math.random() * GAME_H,
@@ -473,7 +470,7 @@ const stars = Array.from({ length: 60 }, () => ({
 }));
 
 // ============================================================
-// GRID HELPERS (hex grid with offset rows)
+// GRID HELPERS
 // ============================================================
 function gridToXY(col, row) {
   const offset = (row % 2 === 1) ? BUBBLE_R : 0;
@@ -527,19 +524,17 @@ function pickNextProjectileColor() {
 // ============================================================
 // DIFFICULTY ESCALATION
 // ============================================================
-// shotsPerWave: gentle in early waves, drops dramatically in late game.
-// descentRate: barely-perceptible at first, accelerates into a hellscape.
 function updateDifficulty() {
   if (waves <= 3) {
-    shotsPerWave = SHOTS_PER_WAVE_INITIAL;          // 5 shots
+    shotsPerWave = SHOTS_PER_WAVE_INITIAL;
   } else if (waves <= 12) {
-    shotsPerWave = 5 - (waves - 3) * 0.3;           // 5 → ~2.3
+    shotsPerWave = 5 - (waves - 3) * 0.3;
   } else {
     shotsPerWave = Math.max(2, 2.3 - (waves - 12) * 0.05);
   }
 
   if (waves <= 3) {
-    descentRate = 0.010;                             // ~58s for one row of drift
+    descentRate = 0.010;
   } else {
     const w = waves - 3;
     descentRate = Math.min(0.28, 0.012 * w + 0.0015 * w * w);
@@ -575,17 +570,14 @@ function initGame() {
   dangerLevel = 0;
   updateDifficulty();
 
-  // Build initial 6 rows with 5 colors from the start
-  const initialColors = 5;
   for (let row = 0; row < 6; row++) {
     for (let col = 0; col < COLS; col++) {
-      // odd rows have one fewer column visually but we use COLS slots; skip last to avoid clipping
       if (row % 2 === 1 && col === COLS - 1) continue;
       const pos = gridToXY(col, row);
       bubbles.push({
         col, row,
         x: pos.x, y: pos.y,
-        color: Math.floor(Math.random() * initialColors),
+        color: Math.floor(Math.random() * 5),
         wobble: Math.random() * Math.PI * 2,
         scale: 1,
         spawnAge: 0,
@@ -650,11 +642,10 @@ function handleEnd(e) {
   const dx = aimX - projectile.x;
   const dy = aimY - projectile.y;
   const dist = Math.hypot(dx, dy);
-  if (dist < 25) return;          // tap too short
-  if (dy > -10) return;            // must aim upward
+  if (dist < 25) return;
+  if (dy > -10) return;
   const nx = dx / dist;
   const ny = dy / dist;
-  // Clamp to mostly-upward angles
   const minSlopeY = -0.20;
   if (ny > minSlopeY) return;
 
@@ -663,38 +654,10 @@ function handleEnd(e) {
   projectile.flying = true;
   shooterRecoil = 1;
 
-  // muzzle puff sparkles
+  // マズルエフェクトも青の煌めき仕様に
   const c = COLORS[projectile.color];
   for (let i = 0; i < 8; i++) {
-    particles.push({
-      type: 'spark',
-      x: projectile.x + (Math.random() - 0.5) * 8,
-      y: projectile.y + (Math.random() - 0.5) * 8,
-      vx: nx * (1 + Math.random() * 2) + (Math.random() - 0.5) * 1.5,
-      vy: ny * (1 + Math.random() * 2) + (Math.random() - 0.5) * 1.5,
-      life: 18 + Math.random() * 6,
-      maxLife: 24,
-      color: '#fff',
-      size: 1 + Math.random() * 1.5,
-      gravity: 0.05,
-      drag: 0.94,
-    });
-  }
-  for (let i = 0; i < 4; i++) {
-    particles.push({
-      type: 'twinkle',
-      x: projectile.x + (Math.random() - 0.5) * 14,
-      y: projectile.y + (Math.random() - 0.5) * 6,
-      vx: (Math.random() - 0.5) * 2,
-      vy: -0.3 - Math.random() * 1,
-      life: 24 + Math.random() * 8,
-      maxLife: 32,
-      color: c.light,
-      size: 1 + Math.random(),
-      gravity: 0,
-      drag: 0.96,
-      twinkleOffset: Math.random() * Math.PI * 2,
-    });
+    particles.push(createBlueGlimmerParticle(projectile.x, projectile.y, nx * 2, ny * 2));
   }
 }
 
@@ -710,19 +673,36 @@ canvas.addEventListener('mouseleave', () => { isAiming = false; });
 document.addEventListener('gesturestart', (e) => e.preventDefault());
 
 // ============================================================
+// NEW PARTICLE GENERATOR (2つ目のコードのロジックを統合)
+// ============================================================
+function createBlueGlimmerParticle(x, y, baseVx = 0, baseVy = 0) {
+  const blueColors = ['#00FFFF', '#ADD8E6', '#87CEEB', '#1E90FF', '#00BFFF'];
+  return {
+    type: 'glimmer',
+    x: x,
+    y: y,
+    size: Math.random() * 6 + 2, // 少し大きめ
+    vx: (Math.random() * 4 - 2) + baseVx, // 少し速め
+    vy: (Math.random() * 4 - 2) + baseVy,
+    color: blueColors[Math.floor(Math.random() * blueColors.length)],
+    opacity: 1,
+    twinkleSpeed: Math.random() * 0.05 + 0.02, // 瞬きの速さ
+    isTwinkling: false,
+    life: 100 // 最大生存フレーム
+  };
+}
+
+// ============================================================
 // GAME LOGIC
 // ============================================================
 function attachProjectile() {
   let { col, row } = xyToGridSnap(projectile.x, projectile.y - globalDescentOffset);
 
-  // make sure top row is anchored
   if (projectile.y < TOP_OFFSET + BUBBLE_R + globalDescentOffset) row = 0;
 
-  // odd rows skip last column
   const maxCol = (row % 2 === 1) ? COLS - 2 : COLS - 1;
   col = Math.max(0, Math.min(maxCol, col));
 
-  // if occupied, find nearest free neighbor
   if (getBubble(col, row)) {
     let bestCell = null;
     let bestDist = Infinity;
@@ -752,7 +732,6 @@ function attachProjectile() {
 
   projectile.flying = false;
 
-  // matching
   const matches = findMatches(col, row, projectile.color);
   if (matches.length >= 3) {
     chain++;
@@ -763,21 +742,14 @@ function attachProjectile() {
       bubbles = bubbles.filter((x) => x !== b);
     });
 
-    // Match epicenter (center of mass) for shockwave / flash effects
     const cx = matches.reduce((s, b) => s + b.x, 0) / matches.length;
     const cy = matches.reduce((s, b) => s + b.y, 0) / matches.length;
 
-    // Shockwave intensity based on match size & chain count
     const heat = matches.length + chain * 2;
     if (heat >= 4) {
       addShockwave(cx, cy, projectile.color, 1 + Math.min(2.5, heat / 6));
     }
-    if (heat >= 6) {
-      // double-ring for emphasis
-      setTimeout(() => addShockwave(cx, cy, projectile.color, 0.7 + Math.min(1.5, heat / 8)), 80);
-    }
 
-    // Screen flash scaled to event size
     if (matches.length >= 5 || chain >= 2) {
       screenFlash = Math.max(screenFlash, Math.min(0.55, 0.18 + matches.length * 0.04 + chain * 0.06));
     }
@@ -785,10 +757,9 @@ function attachProjectile() {
 
     const popPoints = matches.length * 10 * Math.max(1, chain);
     score += popPoints;
-    addScorePopup(newBubble.x, newBubble.y - 10, '+' + popPoints, '#FFE082');
+    addScorePopup(newBubble.x, newBubble.y - 10, '+' + popPoints, '#00FFFF');
     showCombo(matches.length, chain);
 
-    // floaters
     const floaters = findFloaters();
     if (floaters.length > 0) {
       floaters.forEach((b) => {
@@ -806,18 +777,16 @@ function attachProjectile() {
       const floatPts = floaters.length * 25 * Math.max(1, chain);
       score += floatPts;
       setTimeout(() => {
-        addScorePopup(GAME_W/2, GAME_H/2 - 40, '+' + floatPts + ' ドロップ!', '#A8E6CF');
+        addScorePopup(GAME_W/2, GAME_H/2 - 40, '+' + floatPts + ' ドロップ!', '#ADD8E6');
       }, 200);
       screenShake = Math.max(screenShake, 10);
       screenFlash = Math.max(screenFlash, 0.35);
     }
   } else {
-    // no match, chain breaks
     chain = 0;
     screenShake = 2;
   }
 
-  // setup next shot
   nextColor = queueColor;
   queueColor = pickNextProjectileColor();
   projectile = createProjectile();
@@ -827,7 +796,6 @@ function attachProjectile() {
     triggerWave();
   }
 
-  // Win check
   if (bubbles.length === 0) {
     endGame(true);
   }
@@ -881,87 +849,17 @@ function findFloaters() {
   return bubbles.filter((b) => !anchored.has(b.col + ',' + b.row));
 }
 
+// 消滅時のエフェクトを完全書き換え（2つ目のコードの煌めくパーティクルを大量生成）
 function explodeBubble(b) {
-  const c = COLORS[b.color];
-
-  // Pop ghost — fading, expanding bubble corpse
   popGhosts.push({
     x: b.x, y: b.y,
     color: b.color,
     age: 0, maxAge: 12,
   });
 
-  // Colored chunks (bubble shrapnel)
-  for (let i = 0; i < 11; i++) {
-    const a = Math.random() * Math.PI * 2;
-    const sp = 2.5 + Math.random() * 5.5;
-    particles.push({
-      type: 'circle',
-      x: b.x, y: b.y,
-      vx: Math.cos(a) * sp,
-      vy: Math.sin(a) * sp - 1.5,
-      life: 32 + Math.random() * 25,
-      maxLife: 57,
-      color: Math.random() < 0.5 ? c.fill : c.light,
-      size: 2 + Math.random() * 4,
-      gravity: 0.28,
-      drag: 0.97,
-    });
-  }
-
-  // White cross-sparkles (the "kira-kira")
-  for (let i = 0; i < 5; i++) {
-    particles.push({
-      type: 'spark',
-      x: b.x + (Math.random() - 0.5) * 12,
-      y: b.y + (Math.random() - 0.5) * 12,
-      vx: (Math.random() - 0.5) * 5,
-      vy: (Math.random() - 0.5) * 5 - 0.5,
-      life: 26 + Math.random() * 8,
-      maxLife: 34,
-      color: '#fff',
-      size: 1.5 + Math.random() * 1.6,
-      gravity: 0.05,
-      drag: 0.96,
-    });
-  }
-
-  // Spinning stars (golden + light variants)
-  for (let i = 0; i < 4; i++) {
-    const a = Math.random() * Math.PI * 2;
-    const sp = 1.8 + Math.random() * 3.2;
-    particles.push({
-      type: 'star',
-      x: b.x, y: b.y,
-      vx: Math.cos(a) * sp,
-      vy: Math.sin(a) * sp - 1.2,
-      life: 42 + Math.random() * 22,
-      maxLife: 64,
-      color: i % 2 === 0 ? '#FFE082' : c.light,
-      size: 4 + Math.random() * 3,
-      rotation: Math.random() * Math.PI * 2,
-      vRot: (Math.random() - 0.5) * 0.35,
-      gravity: 0.18,
-      drag: 0.97,
-    });
-  }
-
-  // Slow-rising twinkles (the floaty kira-kira)
-  for (let i = 0; i < 7; i++) {
-    particles.push({
-      type: 'twinkle',
-      x: b.x + (Math.random() - 0.5) * 22,
-      y: b.y + (Math.random() - 0.5) * 22,
-      vx: (Math.random() - 0.5) * 1.4,
-      vy: -0.4 - Math.random() * 1.1,
-      life: 50 + Math.random() * 35,
-      maxLife: 85,
-      color: Math.random() < 0.7 ? '#fff' : '#FFE082',
-      size: 0.8 + Math.random() * 1.6,
-      gravity: -0.04,
-      drag: 0.99,
-      twinkleOffset: Math.random() * Math.PI * 2,
-    });
+  // 1箇所につき多めの20個の「煌めく青パーティクル」を四方に放出
+  for (let i = 0; i < 20; i++) {
+    particles.push(createBlueGlimmerParticle(b.x, b.y));
   }
 }
 
@@ -974,14 +872,12 @@ function addShockwave(x, y, colorIdx, scale) {
 }
 
 function addNewRow() {
-  // Shift existing bubbles down one grid row
   bubbles.forEach((b) => {
     b.row++;
     const pos = gridToXY(b.col, b.row);
     b.x = pos.x;
     b.y = pos.y + globalDescentOffset;
   });
-  // Add a new top row (row 0 is even, full COLS columns)
   const colorPool = COLORS.length;
   for (let col = 0; col < COLS; col++) {
     const pos = gridToXY(col, 0);
@@ -1037,87 +933,79 @@ function update() {
   if (screenFlash > 0) screenFlash *= 0.82;
   if (shooterRecoil > 0) shooterRecoil *= 0.80;
 
-  // Particles (now type-aware: gravity, rotation, drag vary per kind)
+  // パーティクルの更新処理（瞬き・サイズ減少・寿命判定の統合）
   for (let i = particles.length - 1; i >= 0; i--) {
     const p = particles[i];
-    p.x += p.vx;
-    p.y += p.vy;
-    p.vy += (p.gravity !== undefined ? p.gravity : 0.25);
-    if (p.drag !== undefined) p.vx *= p.drag;
-    else p.vx *= 0.98;
-    if (p.vRot) p.rotation = (p.rotation || 0) + p.vRot;
-    p.life--;
-    if (p.life <= 0) particles.splice(i, 1);
+    if (p.type === 'glimmer') {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.size > 0.2) p.size -= 0.08;
+
+      // 輝くような瞬き効果ロジック
+      if (p.opacity < 1 && p.isTwinkling) {
+        p.opacity += p.twinkleSpeed;
+        if (p.opacity >= 1) p.isTwinkling = false;
+      } else if (!p.isTwinkling) {
+        p.opacity -= 0.02; // 通常は徐々に消える
+        if (Math.random() < 0.05) p.isTwinkling = true; // たまに瞬く
+      }
+      p.life--;
+      if (p.opacity <= 0 || p.life <= 0) {
+        particles.splice(i, 1);
+      }
+    } else {
+      // 予備の古いパーティクル用処理
+      p.x += p.vx; p.y += p.vy;
+      p.life--;
+      if (p.life <= 0) particles.splice(i, 1);
+    }
   }
 
-  // Pop ghosts (expanding fading bubble corpses)
   for (let i = popGhosts.length - 1; i >= 0; i--) {
     const g = popGhosts[i];
     g.age++;
     if (g.age >= g.maxAge) popGhosts.splice(i, 1);
   }
 
-  // Shockwave rings
   for (let i = shockwaves.length - 1; i >= 0; i--) {
     const s = shockwaves[i];
     s.age++;
     if (s.age >= s.maxAge) shockwaves.splice(i, 1);
   }
 
-  // Falling bubbles (with sparkle trails)
+  // 落下バブルの軌跡エフェクトも青の煌めきに変更
   for (let i = fallingBubbles.length - 1; i >= 0; i--) {
     const b = fallingBubbles[i];
-    b.vy += 0.45;
-    b.y += b.vy;
-    b.x += b.vx;
-    b.rotation += b.vRot;
-    // sparkle trail
-    if (Math.random() < 0.35) {
-      const c = COLORS[b.color];
-      particles.push({
-        type: 'twinkle',
-        x: b.x + (Math.random() - 0.5) * BUBBLE_R * 1.4,
-        y: b.y + (Math.random() - 0.5) * BUBBLE_R * 1.2,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        life: 22, maxLife: 22,
-        color: Math.random() < 0.5 ? '#fff' : c.light,
-        size: 1 + Math.random() * 1.2,
-        gravity: 0,
-        twinkleOffset: Math.random() * Math.PI * 2,
-      });
+    b.vy += 0.45; b.y += b.vy; b.x += b.vx;
+    if (Math.random() < 0.25) {
+      particles.push(createBlueGlimmerParticle(b.x, b.y));
     }
     if (b.y > GAME_H + 50) fallingBubbles.splice(i, 1);
   }
 
-  // Score popups (animated pop-and-rise)
   for (let i = scorePopups.length - 1; i >= 0; i--) {
     const p = scorePopups[i];
-    p.y += p.vy;
-    p.vy *= 0.94;
+    p.y += p.vy; p.vy *= 0.94;
     if (p.scale < 1.3) p.scale += 0.18;
     else if (p.scale > 1) p.scale -= 0.025;
     p.life--;
     if (p.life <= 0) scorePopups.splice(i, 1);
   }
 
-  // Bubble wobble + spawn anim
   for (const b of bubbles) {
     b.wobble += 0.04;
     b.spawnAge++;
     if (b.scale < 1) b.scale = Math.min(1, b.scale + 0.12);
   }
 
-  // Slow continuous descent — the time-pressure mechanic
   if (state === 'playing') {
     globalDescentOffset += descentRate;
     if (globalDescentOffset >= ROW_H) {
       globalDescentOffset -= ROW_H;
-      triggerWave();   // smooth: visual position is preserved
+      triggerWave();
     }
   }
 
-  // Sync each bubble's world position with grid coords + descent offset
   for (const b of bubbles) {
     const pos = gridToXY(b.col, b.row);
     b.x = pos.x;
@@ -1126,24 +1014,10 @@ function update() {
 
   if (state !== 'playing') return;
 
-  // Projectile flight (sub-step to prevent tunneling)
   if (projectile && projectile.flying) {
-    // Sparkle trail
-    const tc = COLORS[projectile.color];
-    for (let i = 0; i < 2; i++) {
-      particles.push({
-        type: 'twinkle',
-        x: projectile.x + (Math.random() - 0.5) * BUBBLE_R * 0.8,
-        y: projectile.y + (Math.random() - 0.5) * BUBBLE_R * 0.8,
-        vx: -projectile.vx * 0.08 + (Math.random() - 0.5) * 0.4,
-        vy: -projectile.vy * 0.08 + (Math.random() - 0.5) * 0.4,
-        life: 16, maxLife: 16,
-        color: Math.random() < 0.4 ? '#fff' : tc.light,
-        size: 1 + Math.random() * 1.4,
-        gravity: 0,
-        drag: 0.95,
-        twinkleOffset: Math.random() * Math.PI * 2,
-      });
+    // 飛行中の軌跡エフェクトも青の煌めきへ
+    if (frame % 2 === 0) {
+      particles.push(createBlueGlimmerParticle(projectile.x, projectile.y));
     }
 
     const steps = 3;
@@ -1154,64 +1028,30 @@ function update() {
       projectile.y += dy;
 
       if (projectile.x < BUBBLE_R) {
-        projectile.x = BUBBLE_R;
-        projectile.vx = -projectile.vx;
-        // wall-bounce sparkle burst
-        for (let i = 0; i < 5; i++) {
-          particles.push({
-            type: 'spark',
-            x: projectile.x, y: projectile.y,
-            vx: Math.random() * 3,
-            vy: (Math.random() - 0.5) * 3,
-            life: 18, maxLife: 18,
-            color: '#fff',
-            size: 1 + Math.random(),
-            gravity: 0.1,
-            drag: 0.95,
-          });
-        }
+        projectile.x = BUBBLE_R; projectile.vx = -projectile.vx;
+        for(let i=0; i<3; i++) particles.push(createBlueGlimmerParticle(projectile.x, projectile.y));
       } else if (projectile.x > GAME_W - BUBBLE_R) {
-        projectile.x = GAME_W - BUBBLE_R;
-        projectile.vx = -projectile.vx;
-        for (let i = 0; i < 5; i++) {
-          particles.push({
-            type: 'spark',
-            x: projectile.x, y: projectile.y,
-            vx: -Math.random() * 3,
-            vy: (Math.random() - 0.5) * 3,
-            life: 18, maxLife: 18,
-            color: '#fff',
-            size: 1 + Math.random(),
-            gravity: 0.1,
-            drag: 0.95,
-          });
-        }
+        projectile.x = GAME_W - BUBBLE_R; projectile.vx = -projectile.vx;
+        for(let i=0; i<3; i++) particles.push(createBlueGlimmerParticle(projectile.x, projectile.y));
       }
 
       if (projectile.y < TOP_OFFSET + BUBBLE_R + globalDescentOffset) {
-        attachProjectile();
-        return;
+        attachProjectile(); return;
       }
 
-      // collision with bubbles
       let hit = false;
       for (const b of bubbles) {
         if (b.scale < 0.6) continue;
         const ddx = projectile.x - b.x;
         const ddy = projectile.y - b.y;
         if (ddx * ddx + ddy * ddy < (BUBBLE_R * 1.85) * (BUBBLE_R * 1.85)) {
-          hit = true;
-          break;
+          hit = true; break;
         }
       }
-      if (hit) {
-        attachProjectile();
-        return;
-      }
+      if (hit) { attachProjectile(); return; }
     }
   }
 
-  // Game over: any bubble below dead line
   dangerLevel = 0;
   let lowestY = 0;
   for (const b of bubbles) {
@@ -1223,44 +1063,7 @@ function update() {
     endGame(false);
   }
 
-  // Refresh HUD bar at ~15Hz so the descent timer is visibly draining
   if (frame % 4 === 0) updateHUD();
-}
-
-function endGame(won) {
-  state = won ? 'win' : 'gameover';
-  const screen = document.getElementById('gameOverScreen');
-  const title = document.getElementById('endTitle');
-  const sub = document.getElementById('endSub');
-  document.getElementById('finalScore').textContent = score.toLocaleString();
-  document.getElementById('finalWave').textContent = waves;
-  if (won) {
-    title.textContent = 'CLEAR!';
-    title.classList.add('win');
-    sub.textContent = 'もこもこを全滅させた!';
-  } else {
-    title.textContent = 'GAME OVER';
-    title.classList.remove('win');
-    sub.textContent = 'もこもこに到達されちゃった…';
-  }
-  screen.classList.remove('hidden');
-}
-
-function updateHUD() {
-  document.getElementById('scoreDisplay').textContent = score.toLocaleString();
-  document.getElementById('waveDisplay').textContent = shotsUntilNewRow;
-  const chainEl = document.getElementById('chainDisplay');
-  chainEl.textContent = '×' + Math.max(1, chain);
-  chainEl.classList.toggle('chain-active', chain >= 2);
-  // Bar shows whichever timer is closer to firing the next wave
-  const shotPct = shotsUntilNewRow / Math.max(1, Math.ceil(shotsPerWave));
-  const timePct = 1 - (globalDescentOffset / ROW_H);
-  const fillPct = Math.max(0, Math.min(shotPct, timePct)) * 100;
-  const fill = document.getElementById('waveFill');
-  fill.style.width = fillPct + '%';
-  fill.style.background = fillPct < 25
-    ? 'linear-gradient(90deg, #FF5050, #FF8FB8)'
-    : 'linear-gradient(90deg, #FF8FB8, #B19CD9)';
 }
 
 // ============================================================
@@ -1273,17 +1076,18 @@ function render() {
   const sy = h / GAME_H;
 
   ctx.setTransform(1, 0, 0, 1, 0, 0);
-  ctx.clearRect(0, 0, w, h);
+  
+  // 2つ目のコードの「rgba(0,0,0,0.08)」のトレイル効果（残像演出）をゲームキャンバスに適用
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.12)';
+  ctx.fillRect(0, 0, w, h);
 
   ctx.save();
-  // Letterbox: maintain aspect ratio
   const scale = Math.min(sx, sy);
   const offX = (w - GAME_W * scale) / 2;
   const offY = (h - GAME_H * scale) / 2;
   ctx.translate(offX, offY);
   ctx.scale(scale, scale);
 
-  // Screen shake
   if (screenShake > 0.1) {
     ctx.translate((Math.random() - 0.5) * screenShake, (Math.random() - 0.5) * screenShake);
   }
@@ -1292,43 +1096,31 @@ function render() {
   drawTopWarning();
   drawDeadLine();
 
-  // Active bubbles (sort by row so top draws first - lower bubbles overlap correctly)
   const sorted = bubbles.slice().sort((a, b) => a.y - b.y);
   for (const b of sorted) {
     drawMonster(b.x, b.y, b.color, b.wobble, b.scale);
   }
 
-  // Pop ghosts (bubble corpses expanding & fading)
+  // Pop ghosts
   for (const g of popGhosts) {
     const t = g.age / g.maxAge;
-    const scale = 1 + t * 1.4;
+    const rScale = 1 + t * 1.4;
     const alpha = (1 - t) * 0.85;
     const c = COLORS[g.color];
     ctx.save();
     ctx.globalAlpha = alpha;
-    // glow
     ctx.shadowColor = c.fill;
     ctx.shadowBlur = 18 * (1 - t);
-    // filled fading bubble
-    const grad = ctx.createRadialGradient(g.x, g.y, 0, g.x, g.y, BUBBLE_R * scale);
+    const grad = ctx.createRadialGradient(g.x, g.y, 0, g.x, g.y, BUBBLE_R * rScale);
     grad.addColorStop(0, c.light);
     grad.addColorStop(0.7, c.fill);
-    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    grad.addColorStop(1, 'rgba(0,0,0,0)');
     ctx.fillStyle = grad;
-    ctx.beginPath();
-    ctx.arc(g.x, g.y, BUBBLE_R * scale, 0, Math.PI * 2);
-    ctx.fill();
-    // outer ring
-    ctx.shadowBlur = 0;
-    ctx.strokeStyle = c.light;
-    ctx.lineWidth = Math.max(0.5, 3 * (1 - t));
-    ctx.beginPath();
-    ctx.arc(g.x, g.y, BUBBLE_R * scale, 0, Math.PI * 2);
-    ctx.stroke();
+    ctx.beginPath(); ctx.arc(g.x, g.y, BUBBLE_R * rScale, 0, Math.PI * 2); ctx.fill();
     ctx.restore();
   }
 
-  // Shockwave rings
+  // Shockwaves
   for (const s of shockwaves) {
     const t = s.age / s.maxAge;
     const r = BUBBLE_R * (0.6 + t * 5) * s.scale;
@@ -1338,43 +1130,27 @@ function render() {
     ctx.globalAlpha = alpha;
     ctx.shadowColor = c.fill;
     ctx.shadowBlur = 14;
-    // Outer ring
     ctx.strokeStyle = c.fill;
     ctx.lineWidth = 4 * (1 - t);
-    ctx.beginPath();
-    ctx.arc(s.x, s.y, r, 0, Math.PI * 2);
-    ctx.stroke();
-    // Inner ring (white core)
-    ctx.shadowBlur = 6;
-    ctx.strokeStyle = '#fff';
-    ctx.lineWidth = 2 * (1 - t);
-    ctx.beginPath();
-    ctx.arc(s.x, s.y, r * 0.78, 0, Math.PI * 2);
-    ctx.stroke();
-    ctx.restore();
-  }
-  ctx.globalAlpha = 1;
-
-  // Falling bubbles
-  for (const b of fallingBubbles) {
-    ctx.save();
-    drawMonster(b.x, b.y, b.color, 0, 1, b.rotation);
+    ctx.beginPath(); ctx.arc(s.x, s.y, r, 0, Math.PI * 2); ctx.stroke();
     ctx.restore();
   }
 
-  // Aim line
+  if (fallingBubbles.length > 0) {
+    for (const b of fallingBubbles) {
+      ctx.save(); drawMonster(b.x, b.y, b.color, 0, 1, b.rotation); ctx.restore();
+    }
+  }
+
   if (state === 'playing' && isAiming && projectile && !projectile.flying) {
     drawAimLine();
   }
 
-  // Shooter
   if (state === 'playing') {
     drawShooter();
     if (projectile) {
       if (projectile.flying) {
-        // motion trail
-        ctx.save();
-        ctx.globalAlpha = 0.3;
+        ctx.save(); ctx.globalAlpha = 0.3;
         drawMonster(projectile.x - projectile.vx * 0.6, projectile.y - projectile.vy * 0.6, projectile.color, 0, 0.7);
         ctx.restore();
       }
@@ -1383,85 +1159,19 @@ function render() {
     drawNextPreview();
   }
 
-  // Particles
+  // 煌めくパーティクル（Glimmering Blue）の描画ロジック
   for (const p of particles) {
-    const alpha = p.life / p.maxLife;
-
-    if (p.type === 'star') {
+    if (p.type === 'glimmer') {
       ctx.save();
-      ctx.globalAlpha = alpha;
-      ctx.translate(p.x, p.y);
-      ctx.rotate(p.rotation || 0);
-      // Outer glow
-      ctx.shadowColor = p.color;
-      ctx.shadowBlur = 8;
       ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.opacity;
       ctx.beginPath();
-      const points = 4;
-      for (let i = 0; i < points * 2; i++) {
-        const r = i % 2 === 0 ? p.size : p.size * 0.4;
-        const a = (i / (points * 2)) * Math.PI * 2 - Math.PI / 2;
-        const x = Math.cos(a) * r;
-        const y = Math.sin(a) * r;
-        if (i === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      }
-      ctx.closePath();
-      ctx.fill();
-      // bright center dot
-      ctx.shadowBlur = 0;
-      ctx.fillStyle = '#fff';
-      ctx.beginPath();
-      ctx.arc(0, 0, p.size * 0.3, 0, Math.PI * 2);
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
       ctx.fill();
       ctx.restore();
-    } else if (p.type === 'twinkle') {
-      const tw = 0.3 + 0.7 * Math.abs(Math.sin(frame * 0.25 + (p.twinkleOffset || 0)));
-      ctx.globalAlpha = alpha * tw;
-      // glow
-      ctx.shadowColor = p.color;
-      ctx.shadowBlur = 6;
-      ctx.fillStyle = p.color;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.shadowBlur = 0;
-      // tiny cross sparkle
-      ctx.strokeStyle = p.color;
-      ctx.lineWidth = 0.6;
-      const k = p.size * 2.2 * tw;
-      ctx.beginPath();
-      ctx.moveTo(p.x - k, p.y); ctx.lineTo(p.x + k, p.y);
-      ctx.moveTo(p.x, p.y - k); ctx.lineTo(p.x, p.y + k);
-      ctx.stroke();
-    } else if (p.type === 'spark' || p.spark) {
-      ctx.globalAlpha = alpha;
-      ctx.fillStyle = '#fff';
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fill();
-      // cross flare
-      ctx.strokeStyle = '#fff';
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.moveTo(p.x - p.size * 2.5, p.y); ctx.lineTo(p.x + p.size * 2.5, p.y);
-      ctx.moveTo(p.x, p.y - p.size * 2.5); ctx.lineTo(p.x, p.y + p.size * 2.5);
-      ctx.stroke();
-    } else {
-      // default: colored circle with subtle glow
-      ctx.globalAlpha = alpha;
-      ctx.shadowColor = p.color;
-      ctx.shadowBlur = 4;
-      ctx.fillStyle = p.color;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.shadowBlur = 0;
     }
   }
-  ctx.globalAlpha = 1;
 
-  // Score popups (with scale & rotation pop)
   for (const p of scorePopups) {
     const alpha = Math.min(1, p.life / 30);
     ctx.save();
@@ -1469,23 +1179,19 @@ function render() {
     ctx.rotate(p.rotation || 0);
     ctx.scale(p.scale || 1, p.scale || 1);
     ctx.globalAlpha = alpha;
-    ctx.font = '900 16px "DotGothic16", "M PLUS Rounded 1c", monospace';
+    ctx.font = '900 16px "DotGothic16", monospace';
     ctx.textAlign = 'center';
-    // glow stroke
     ctx.shadowColor = p.color;
     ctx.shadowBlur = 8;
-    ctx.strokeStyle = 'rgba(0,0,0,0.7)';
+    ctx.strokeStyle = 'rgba(0,0,0,0.8)';
     ctx.lineWidth = 4;
     ctx.strokeText(p.text, 0, 0);
-    ctx.shadowBlur = 0;
     ctx.fillStyle = p.color;
     ctx.fillText(p.text, 0, 0);
     ctx.restore();
   }
   ctx.globalAlpha = 1;
-  ctx.textAlign = 'left';
 
-  // Screen flash overlay
   if (screenFlash > 0.02) {
     ctx.globalAlpha = screenFlash;
     ctx.fillStyle = '#fff';
@@ -1496,60 +1202,39 @@ function render() {
   ctx.restore();
 }
 
-// === Background ===
+// === Background 星空 ===
 function drawStars() {
   for (const s of stars) {
-    const a = 0.3 + 0.5 * Math.abs(Math.sin(frame * s.twSpeed + s.twinkle));
-    ctx.fillStyle = 'rgba(255,255,255,' + a + ')';
-    ctx.beginPath();
-    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-    ctx.fill();
+    const a = 0.2 + 0.6 * Math.abs(Math.sin(frame * s.twSpeed + s.twinkle));
+    ctx.fillStyle = 'rgba(0, 255, 255, ' + a * 0.6 + ')'; // 星々もシアン寄りの煌めきに
+    ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2); ctx.fill();
   }
-  // soft moon-like glow at top
-  const grad = ctx.createRadialGradient(GAME_W * 0.7, 30, 0, GAME_W * 0.7, 30, 80);
-  grad.addColorStop(0, 'rgba(255, 224, 130, 0.15)');
-  grad.addColorStop(1, 'rgba(255, 224, 130, 0)');
+  const grad = ctx.createRadialGradient(GAME_W * 0.5, 0, 0, GAME_W * 0.5, 0, 150);
+  grad.addColorStop(0, 'rgba(0, 191, 255, 0.15)');
+  grad.addColorStop(1, 'rgba(0,0,0,0)');
   ctx.fillStyle = grad;
-  ctx.fillRect(0, 0, GAME_W, 120);
+  ctx.fillRect(0, 0, GAME_W, 150);
 }
 
 function drawTopWarning() {
   if (dangerLevel < 0.3) return;
-  const a = (dangerLevel - 0.3) * 0.5;
-  ctx.fillStyle = 'rgba(255, 100, 100, ' + (a * (0.5 + 0.5 * Math.sin(frame * 0.2))) + ')';
+  const a = (dangerLevel - 0.3) * 0.4;
+  ctx.fillStyle = 'rgba(30, 144, 255, ' + (a * (0.5 + 0.5 * Math.sin(frame * 0.2))) + ')'; // 危険演出も青系統のフラッシュに変更
   ctx.fillRect(0, 0, GAME_W, GAME_H);
-  ctx.globalCompositeOperation = 'destination-out';
-  const grad = ctx.createRadialGradient(GAME_W/2, GAME_H/2, 0, GAME_W/2, GAME_H/2, GAME_W/1.2);
-  grad.addColorStop(0, 'rgba(0,0,0,1)');
-  grad.addColorStop(1, 'rgba(0,0,0,0)');
-  ctx.fillStyle = grad;
-  ctx.fillRect(0, 0, GAME_W, GAME_H);
-  ctx.globalCompositeOperation = 'source-over';
 }
 
 function drawDeadLine() {
   ctx.save();
   const pulse = 0.4 + 0.3 * Math.sin(frame * 0.08);
-  ctx.strokeStyle = 'rgba(255, 100, 130, ' + pulse + ')';
+  ctx.strokeStyle = 'rgba(0, 191, 255, ' + pulse + ')';
   ctx.lineWidth = 1.5;
   ctx.setLineDash([6, 6]);
   ctx.lineDashOffset = -frame * 0.5;
-  ctx.beginPath();
-  ctx.moveTo(0, DEAD_LINE_Y);
-  ctx.lineTo(GAME_W, DEAD_LINE_Y);
-  ctx.stroke();
-  ctx.setLineDash([]);
-  // small skull-like dot markers
-  ctx.fillStyle = 'rgba(255, 100, 130, 0.5)';
-  for (let x = 10; x < GAME_W; x += 40) {
-    ctx.beginPath();
-    ctx.arc(x, DEAD_LINE_Y, 1.5, 0, Math.PI * 2);
-    ctx.fill();
-  }
+  ctx.beginPath(); ctx.moveTo(0, DEAD_LINE_Y); ctx.lineTo(GAME_W, DEAD_LINE_Y); ctx.stroke();
   ctx.restore();
 }
 
-// === Cute monster (the "bubble") ===
+// === Cute Blue Monster ===
 function drawMonster(x, y, colorIdx, wobble, scale = 1, rotation = 0) {
   const c = COLORS[colorIdx];
   const r = BUBBLE_R * scale;
@@ -1560,81 +1245,58 @@ function drawMonster(x, y, colorIdx, wobble, scale = 1, rotation = 0) {
   ctx.translate(x + wobX, y + wobY);
   if (rotation) ctx.rotate(rotation);
 
-  // glow
   ctx.shadowColor = c.glow;
   ctx.shadowBlur = 8 * scale;
 
-  // body gradient
   const grad = ctx.createRadialGradient(-r * 0.35, -r * 0.4, 0, 0, 0, r * 1.1);
   grad.addColorStop(0, c.light);
   grad.addColorStop(0.55, c.fill);
   grad.addColorStop(1, c.dark);
   ctx.fillStyle = grad;
 
-  // soft squish shape
   ctx.beginPath();
   ctx.ellipse(0, 0, r, r * 0.95, 0, 0, Math.PI * 2);
   ctx.fill();
-
   ctx.shadowBlur = 0;
 
-  // shine highlight
-  ctx.fillStyle = 'rgba(255,255,255,0.55)';
-  ctx.beginPath();
-  ctx.ellipse(-r * 0.35, -r * 0.45, r * 0.3, r * 0.18, -0.5, 0, Math.PI * 2);
-  ctx.fill();
+  // ハイライト
+  ctx.fillStyle = 'rgba(255,255,255,0.6)';
+  ctx.beginPath(); ctx.ellipse(-r * 0.35, -r * 0.45, r * 0.3, r * 0.18, -0.5, 0, Math.PI * 2); ctx.fill();
 
-  // tiny secondary shine
-  ctx.fillStyle = 'rgba(255,255,255,0.7)';
-  ctx.beginPath();
-  ctx.arc(-r * 0.5, -r * 0.55, r * 0.08, 0, Math.PI * 2);
-  ctx.fill();
-
-  // Eyes
+  // 目
   const eyeR = r * 0.16;
   const eyeOffX = r * 0.32;
   const eyeOffY = -r * 0.02;
 
-  // Eye whites
   ctx.fillStyle = '#fff';
   ctx.beginPath();
-  ctx.arc(-eyeOffX, eyeOffY, eyeR + 1.5, 0, Math.PI * 2);
-  ctx.arc(eyeOffX,  eyeOffY, eyeR + 1.5, 0, Math.PI * 2);
+  ctx.arc(-eyeOffX, eyeOffY, eyeR + 1.2, 0, Math.PI * 2);
+  ctx.arc(eyeOffX,  eyeOffY, eyeR + 1.2, 0, Math.PI * 2);
   ctx.fill();
 
-  // Pupils
-  ctx.fillStyle = '#1a0e35';
+  ctx.fillStyle = '#001122';
   ctx.beginPath();
-  ctx.arc(-eyeOffX, eyeOffY + 1, eyeR * 0.65, 0, Math.PI * 2);
-  ctx.arc(eyeOffX,  eyeOffY + 1, eyeR * 0.65, 0, Math.PI * 2);
+  ctx.arc(-eyeOffX, eyeOffY + 0.5, eyeR * 0.65, 0, Math.PI * 2);
+  ctx.arc(eyeOffX,  eyeOffY + 0.5, eyeR * 0.65, 0, Math.PI * 2);
   ctx.fill();
 
-  // Eye sparkles
-  ctx.fillStyle = '#fff';
-  ctx.beginPath();
-  ctx.arc(-eyeOffX + eyeR * 0.3, eyeOffY - eyeR * 0.3, eyeR * 0.3, 0, Math.PI * 2);
-  ctx.arc(eyeOffX  + eyeR * 0.3, eyeOffY - eyeR * 0.3, eyeR * 0.3, 0, Math.PI * 2);
-  ctx.fill();
-
-  // Mouth (cute smile)
+  // 口
   ctx.strokeStyle = c.dark;
   ctx.lineWidth = Math.max(1.2, r * 0.09);
   ctx.lineCap = 'round';
-  ctx.beginPath();
-  ctx.arc(0, r * 0.28, r * 0.18, 0.2, Math.PI - 0.2);
-  ctx.stroke();
+  ctx.beginPath(); ctx.arc(0, r * 0.25, r * 0.18, 0.2, Math.PI - 0.2); ctx.stroke();
 
-  // Cheeks
-  ctx.fillStyle = 'rgba(255, 110, 140, 0.45)';
+  // ほっぺ
+  ctx.fillStyle = 'rgba(0, 255, 255, 0.3)';
   ctx.beginPath();
-  ctx.arc(-r * 0.5, r * 0.22, r * 0.12, 0, Math.PI * 2);
-  ctx.arc(r * 0.5,  r * 0.22, r * 0.12, 0, Math.PI * 2);
+  ctx.arc(-r * 0.5, r * 0.2, r * 0.12, 0, Math.PI * 2);
+  ctx.arc(r * 0.5,  r * 0.2, r * 0.12, 0, Math.PI * 2);
   ctx.fill();
 
   ctx.restore();
 }
 
-// === Aim line with predicted bouncing ===
+// === Aim Line ===
 function drawAimLine() {
   const startX = GAME_W / 2;
   const startY = SHOOTER_Y;
@@ -1643,269 +1305,118 @@ function drawAimLine() {
   const dist = Math.hypot(dx, dy);
   if (dy > -10 || dist < 25) return;
 
-  let nx = dx / dist;
-  let ny = dy / dist;
-  // clamp
+  let nx = dx / dist; let ny = dy / dist;
   const maxNy = -0.20;
-  if (ny > maxNy) {
-    ny = maxNy;
-    nx = Math.sign(nx) * Math.sqrt(1 - ny * ny);
-  }
+  if (ny > maxNy) { ny = maxNy; nx = Math.sign(nx) * Math.sqrt(1 - ny * ny); }
 
-  const points = [{ x: startX, y: startY }];
-  let x = startX;
-  let y = startY;
-  let vx = nx;
-  let vy = ny;
+  let x = startX; let y = startY;
+  let vx = nx; let vy = ny;
   const stepLen = 5;
-  let bounceCount = 0;
-  const maxBounces = 1;
+  const points = [{ x, y }];
 
   for (let i = 0; i < 220; i++) {
-    x += vx * stepLen;
-    y += vy * stepLen;
-
-    if (x < BUBBLE_R) {
-      x = BUBBLE_R;
-      vx = -vx;
-      points.push({ x, y, bounce: true });
-      if (++bounceCount > maxBounces) break;
-    } else if (x > GAME_W - BUBBLE_R) {
-      x = GAME_W - BUBBLE_R;
-      vx = -vx;
-      points.push({ x, y, bounce: true });
-      if (++bounceCount > maxBounces) break;
-    }
-
+    x += vx * stepLen; y += vy * stepLen;
+    if (x < BUBBLE_R) { x = BUBBLE_R; vx = -vx; points.push({ x, y }); break; }
+    else if (x > GAME_W - BUBBLE_R) { x = GAME_W - BUBBLE_R; vx = -vx; points.push({ x, y }); break; }
+    
     let hit = false;
     for (const b of bubbles) {
-      const ddx = x - b.x;
-      const ddy = y - b.y;
-      if (ddx * ddx + ddy * ddy < (BUBBLE_R * 1.85) * (BUBBLE_R * 1.85)) {
-        hit = true;
-        break;
-      }
+      if (Math.hypot(x - b.x, y - b.y) < BUBBLE_R * 1.85) { hit = true; break; }
     }
     if (hit || y < TOP_OFFSET + BUBBLE_R) break;
   }
-  points.push({ x, y, end: true });
+  points.push({ x, y });
 
-  // draw segments
   ctx.save();
   ctx.lineWidth = 2;
-  ctx.lineCap = 'round';
   ctx.setLineDash([4, 6]);
-  ctx.lineDashOffset = -frame * 0.4;
-  const c = COLORS[projectile.color];
-
-  ctx.strokeStyle = 'rgba(255,255,255,0.4)';
+  ctx.strokeStyle = 'rgba(0, 255, 255, 0.5)';
   ctx.beginPath();
   for (let i = 0; i < points.length; i++) {
-    const p = points[i];
-    if (i === 0) ctx.moveTo(p.x, p.y);
-    else ctx.lineTo(p.x, p.y);
+    if (i === 0) ctx.moveTo(points[i].x, points[i].y);
+    else ctx.lineTo(points[i].x, points[i].y);
   }
   ctx.stroke();
-  ctx.setLineDash([]);
-
-  // landing indicator
-  const last = points[points.length - 1];
-  ctx.fillStyle = c.fill;
-  ctx.globalAlpha = 0.6 + 0.3 * Math.sin(frame * 0.2);
-  ctx.beginPath();
-  ctx.arc(last.x, last.y, 6, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.globalAlpha = 1;
-
-  ctx.fillStyle = '#fff';
-  ctx.beginPath();
-  ctx.arc(last.x, last.y, 2, 0, Math.PI * 2);
-  ctx.fill();
   ctx.restore();
 }
 
-// === The shooter character (cute mochi cat) ===
+// === Shooter Mochi Cat (Blue Style) ===
 function drawShooter() {
   ctx.save();
   ctx.translate(GAME_W / 2, SHOOTER_Y + 14);
-
   const breath = 1 + Math.sin(frame * 0.08) * 0.02;
 
-  // shadow
-  ctx.fillStyle = 'rgba(0,0,0,0.4)';
-  ctx.beginPath();
-  ctx.ellipse(0, 28, 26, 5, 0, 0, Math.PI * 2);
-  ctx.fill();
+  ctx.fillStyle = 'rgba(0,0,0,0.5)';
+  ctx.beginPath(); ctx.ellipse(0, 28, 26, 5, 0, 0, Math.PI * 2); ctx.fill();
 
-  // recoil = squish vertically + glow when firing
   const recoilScale = 1 - shooterRecoil * 0.18;
   ctx.translate(0, shooterRecoil * 4);
   ctx.scale(breath, breath * recoilScale);
-  if (shooterRecoil > 0.05) {
-    ctx.shadowColor = '#FFE082';
-    ctx.shadowBlur = 18 * shooterRecoil;
-  }
 
   const bodyR = 24;
-
-  // Determine direction it's looking based on aim
   let lookX = 0, lookY = 0;
   if (state === 'playing' && projectile && !projectile.flying) {
-    const dx = aimX - GAME_W / 2;
-    const dy = aimY - SHOOTER_Y;
+    const dx = aimX - GAME_W / 2; const dy = aimY - SHOOTER_Y;
     const d = Math.hypot(dx, dy);
-    if (d > 1) {
-      lookX = (dx / d) * 2.5;
-      lookY = (dy / d) * 2;
-    }
+    if (d > 1) { lookX = (dx / d) * 2.5; lookY = (dy / d) * 2; }
   }
 
-  // body (mochi cat)
-  ctx.shadowColor = 'rgba(255,143,184,0.4)';
+  // シューターの体もホワイトからクリアブルーのグラデーションに変更
+  ctx.shadowColor = 'rgba(0, 255, 255, 0.3)';
   ctx.shadowBlur = 10;
   const grad = ctx.createRadialGradient(-6, -8, 0, 0, 0, bodyR);
   grad.addColorStop(0, '#ffffff');
-  grad.addColorStop(0.7, '#FFE4EC');
-  grad.addColorStop(1, '#FFB8D0');
+  grad.addColorStop(0.6, '#E0F7FA');
+  grad.addColorStop(1, '#80DEEA');
   ctx.fillStyle = grad;
-  ctx.beginPath();
-  ctx.ellipse(0, 0, bodyR, bodyR * 0.9, 0, 0, Math.PI * 2);
-  ctx.fill();
+  ctx.beginPath(); ctx.ellipse(0, 0, bodyR, bodyR * 0.9, 0, 0, Math.PI * 2); ctx.fill();
   ctx.shadowBlur = 0;
 
-  // ears
-  ctx.fillStyle = '#FFB8D0';
+  // 耳
+  ctx.fillStyle = '#80DEEA';
   ctx.beginPath();
-  ctx.moveTo(-bodyR * 0.7, -bodyR * 0.55);
-  ctx.lineTo(-bodyR * 0.4, -bodyR * 1.15);
-  ctx.lineTo(-bodyR * 0.2, -bodyR * 0.75);
-  ctx.closePath();
-  ctx.fill();
-  ctx.beginPath();
-  ctx.moveTo(bodyR * 0.7, -bodyR * 0.55);
-  ctx.lineTo(bodyR * 0.4, -bodyR * 1.15);
-  ctx.lineTo(bodyR * 0.2, -bodyR * 0.75);
-  ctx.closePath();
+  ctx.moveTo(-bodyR*0.7, -bodyR*0.55); ctx.lineTo(-bodyR*0.4, -bodyR*1.15); ctx.lineTo(-bodyR*0.2, -bodyR*0.75);
+  ctx.moveTo(bodyR*0.7, -bodyR*0.55); ctx.lineTo(bodyR*0.4, -bodyR*1.15); ctx.lineTo(bodyR*0.2, -bodyR*0.75);
   ctx.fill();
 
-  // inner ears
-  ctx.fillStyle = '#FF8FB8';
-  ctx.beginPath();
-  ctx.moveTo(-bodyR * 0.55, -bodyR * 0.7);
-  ctx.lineTo(-bodyR * 0.42, -bodyR * 1.0);
-  ctx.lineTo(-bodyR * 0.3, -bodyR * 0.78);
-  ctx.closePath();
-  ctx.fill();
-  ctx.beginPath();
-  ctx.moveTo(bodyR * 0.55, -bodyR * 0.7);
-  ctx.lineTo(bodyR * 0.42, -bodyR * 1.0);
-  ctx.lineTo(bodyR * 0.3, -bodyR * 0.78);
-  ctx.closePath();
-  ctx.fill();
-
-  // eyes (look at aim)
-  ctx.fillStyle = '#1a0e35';
+  // 目
+  ctx.fillStyle = '#001122';
   ctx.beginPath();
   ctx.arc(-bodyR * 0.32 + lookX, -bodyR * 0.05 + lookY, 3.5, 0, Math.PI * 2);
   ctx.arc(bodyR * 0.32 + lookX,  -bodyR * 0.05 + lookY, 3.5, 0, Math.PI * 2);
   ctx.fill();
 
-  // eye sparkles
-  ctx.fillStyle = '#fff';
-  ctx.beginPath();
-  ctx.arc(-bodyR * 0.32 + 1.2 + lookX, -bodyR * 0.05 - 1.2 + lookY, 1.2, 0, Math.PI * 2);
-  ctx.arc(bodyR * 0.32 + 1.2 + lookX,  -bodyR * 0.05 - 1.2 + lookY, 1.2, 0, Math.PI * 2);
-  ctx.fill();
-
-  // mouth (^^ smile)
-  ctx.strokeStyle = '#1a0e35';
-  ctx.lineWidth = 1.6;
-  ctx.lineCap = 'round';
-  ctx.beginPath();
-  ctx.moveTo(-3.5, bodyR * 0.22);
-  ctx.lineTo(0, bodyR * 0.32);
-  ctx.lineTo(3.5, bodyR * 0.22);
-  ctx.stroke();
-
-  // cheeks
-  ctx.fillStyle = 'rgba(255, 130, 160, 0.6)';
-  ctx.beginPath();
-  ctx.arc(-bodyR * 0.6, bodyR * 0.18, 4, 0, Math.PI * 2);
-  ctx.arc(bodyR * 0.6,  bodyR * 0.18, 4, 0, Math.PI * 2);
-  ctx.fill();
-
-  // little tail with star (between cat and projectile)
-  ctx.strokeStyle = '#FFB8D0';
-  ctx.lineWidth = 4;
-  ctx.lineCap = 'round';
-  ctx.beginPath();
-  ctx.moveTo(bodyR * 0.85, bodyR * 0.4);
-  ctx.quadraticCurveTo(bodyR * 1.4, bodyR * 0.1, bodyR * 1.45, -bodyR * 0.4);
-  ctx.stroke();
-
-  // tail star tip
-  ctx.fillStyle = '#FFE082';
-  drawStar(bodyR * 1.45, -bodyR * 0.45, 5, 4, 1.8);
+  // 口
+  ctx.strokeStyle = '#001122'; ctx.lineWidth = 1.6; ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.moveTo(-3.5, bodyR * 0.22); ctx.lineTo(0, bodyR * 0.32); ctx.lineTo(3.5, bodyR * 0.22); ctx.stroke();
 
   ctx.restore();
 }
 
-function drawStar(cx, cy, points, outer, inner) {
-  ctx.save();
-  ctx.translate(cx, cy);
-  ctx.rotate(frame * 0.04);
-  ctx.beginPath();
-  for (let i = 0; i < points * 2; i++) {
-    const r = i % 2 === 0 ? outer : inner;
-    const a = (i / (points * 2)) * Math.PI * 2 - Math.PI / 2;
-    const x = Math.cos(a) * r;
-    const y = Math.sin(a) * r;
-    if (i === 0) ctx.moveTo(x, y);
-    else ctx.lineTo(x, y);
-  }
-  ctx.closePath();
-  ctx.fill();
-  ctx.restore();
-}
-
-// Next-shot preview chip near the shooter
 function drawNextPreview() {
   ctx.save();
   ctx.translate(GAME_W - 30, SHOOTER_Y - 8);
-  ctx.fillStyle = 'rgba(13,8,32,0.6)';
-  ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+  ctx.fillStyle = 'rgba(0, 10, 25, 0.7)';
+  ctx.strokeStyle = 'rgba(0, 255, 255, 0.2)';
   ctx.lineWidth = 1.5;
-  ctx.beginPath();
-  ctx.roundRect(-22, -16, 44, 32, 12);
-  ctx.fill();
-  ctx.stroke();
+  ctx.beginPath(); ctx.roundRect(-22, -16, 44, 32, 12); ctx.fill(); ctx.stroke();
 
-  ctx.font = '700 7px "M PLUS Rounded 1c", sans-serif';
-  ctx.fillStyle = 'rgba(255,255,255,0.6)';
+  ctx.font = '700 7px sans-serif';
+  ctx.fillStyle = 'rgba(0, 255, 255, 0.7)';
   ctx.textAlign = 'center';
   ctx.fillText('NEXT', 0, -8);
 
-  // small queued monster
   drawMonster(0, 5, queueColor, frame * 0.05, 0.5);
-  ctx.textAlign = 'left';
   ctx.restore();
 }
 
-// roundRect polyfill for older Safari
 if (!CanvasRenderingContext2D.prototype.roundRect) {
   CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
-    this.beginPath();
-    this.moveTo(x + r, y);
-    this.lineTo(x + w - r, y);
-    this.quadraticCurveTo(x + w, y, x + w, y + r);
-    this.lineTo(x + w, y + h - r);
-    this.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-    this.lineTo(x + r, y + h);
-    this.quadraticCurveTo(x, y + h, x, y + h - r);
-    this.lineTo(x, y + r);
-    this.quadraticCurveTo(x, y, x + r, y);
-    this.closePath();
-    return this;
+    this.beginPath(); this.moveTo(x + r, y); ctx.lineTo(x + w - r, y);
+    this.quadraticCurveTo(x + w, y, x + w, y + r); this.lineTo(x + w, y + h - r);
+    this.quadraticCurveTo(x + w, y + h, x + w - r, y + h); this.lineTo(x + r, y + h);
+    this.quadraticCurveTo(x, y + h, x, y + h - r); this.lineTo(x, y + r);
+    this.quadraticCurveTo(x, y, x + r, y); this.closePath(); return this;
   };
 }
 
@@ -1918,9 +1429,37 @@ function loop() {
   requestAnimationFrame(loop);
 }
 
-// ============================================================
-// UI HOOKS
-// ============================================================
+function endGame(won) {
+  state = won ? 'win' : 'gameover';
+  const screen = document.getElementById('gameOverScreen');
+  const title = document.getElementById('endTitle');
+  const sub = document.getElementById('endSub');
+  document.getElementById('finalScore').textContent = score.toLocaleString();
+  document.getElementById('finalWave').textContent = waves;
+  if (won) {
+    title.textContent = 'CLEAR!'; title.classList.add('win');
+    sub.textContent = 'もこもこを全滅させた!';
+  } else {
+    title.textContent = 'GAME OVER'; title.classList.remove('win');
+    sub.textContent = 'もこもこに到達されちゃった…';
+  }
+  screen.classList.remove('hidden');
+}
+
+function updateHUD() {
+  document.getElementById('scoreDisplay').textContent = score.toLocaleString();
+  document.getElementById('waveDisplay').textContent = shotsUntilNewRow;
+  const chainEl = document.getElementById('chainDisplay');
+  chainEl.textContent = '×' + Math.max(1, chain);
+  chainEl.classList.toggle('chain-active', chain >= 2);
+  
+  const shotPct = shotsUntilNewRow / Math.max(1, Math.ceil(shotsPerWave));
+  const timePct = 1 - (globalDescentOffset / ROW_H);
+  const fillPct = Math.max(0, Math.min(shotPct, timePct)) * 100;
+  const fill = document.getElementById('waveFill');
+  fill.style.width = fillPct + '%';
+}
+
 function startGame() {
   document.getElementById('titleScreen').classList.add('hidden');
   document.getElementById('gameOverScreen').classList.add('hidden');
@@ -1929,11 +1468,8 @@ function startGame() {
 
 document.getElementById('startBtn').addEventListener('click', startGame);
 document.getElementById('retryBtn').addEventListener('click', startGame);
-
-// Prevent iOS double-tap zoom and pinch zoom inside the game container
 document.addEventListener('dblclick', (e) => e.preventDefault(), { passive: false });
 
-// Kick off
 loop();
 </script>
 </body>
